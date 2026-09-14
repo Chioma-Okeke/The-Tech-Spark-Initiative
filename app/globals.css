@@ -60,8 +60,10 @@
   --color-ink-800: var(--ink-800);
   --color-ink-700: var(--ink-700);
   --color-ink-600: var(--ink-600);
+  --color-ink-muted: var(--ink-muted);
 
   --color-iris-950: var(--iris-950);
+  --color-iris-800: var(--iris-800);
   --color-iris-700: var(--iris-700);
   --color-iris-600: var(--iris-600);
   --color-iris-500: var(--iris-500);
@@ -96,9 +98,11 @@
   --ink-800: oklch(0.26 0.045 280); /* #1B1B38  card on dark           */
   --ink-700: oklch(0.33 0.060 280); /* #262650  border / divider on dark */
   --ink-600: oklch(0.43 0.075 280); /* #3A3A6B  hairline / muted stroke  */
+  --ink-muted: oklch(0.40 0.007 286); /* #46464D  secondary / nav text on light */
 
   /* Iris — brand violet (logo, icon chips, lavender headings, purple cards) */
   --iris-950: oklch(0.24 0.075 293); /* #1C1436  purple-tinted dark section */
+  --iris-800: oklch(0.30 0.190 300); /* #41006F  deep violet — card borders on dark */
   --iris-700: oklch(0.48 0.220 293); /* deep violet — text on light tint    */
   --iris-600: oklch(0.55 0.240 293); /* #7C3AED  core brand violet          */
   --iris-500: oklch(0.63 0.200 293); /* #8B5CF6  violet on dark             */
@@ -108,7 +112,7 @@
 
   /* Gold — primary action (CTA buttons, key display words, highlights) */
   --gold-600: oklch(0.73 0.150 70);  /* #E09A0B  pressed / text-safe gold */
-  --gold-500: oklch(0.81 0.155 80);  /* #F5B01E  core CTA gold            */
+  --gold-500: oklch(0.831 0.169 84);  /* #FBBC00  core CTA gold / --primary       */
   --gold-400: oklch(0.86 0.135 85);  /* #F8C043  hover / gold on dark     */
   --gold-100: oklch(0.94 0.032 85);  /* #F6ECD6  cream card fill          */
 
@@ -119,7 +123,7 @@
   --paper: oklch(1 0 0);             /* #FFFFFF  cards / crisp surfaces        */
   --grey-100: oklch(0.96 0 0);       /* #F2F2F2  soft light section            */
   --grey-200: oklch(0.92 0 0);       /* #EBEBEB  light border                  */
-  --grey-300: oklch(0.87 0 0);       /* #D5D5D5  "Core Values" grey section    */
+  --grey-300: oklch(0.845 0 0);      /* #CDCDCD  "Core Values" / page grey band */
   --greige-100: oklch(0.93 0.008 90);/* #EDE9E0  warm neutral card fill        */
 
   /* Status */
@@ -134,7 +138,7 @@
   --popover: var(--paper);
   --popover-foreground: oklch(0.23 0.028 280);
   --primary: var(--gold-500);
-  --primary-foreground: oklch(0.20 0.030 280); /* dark ink on gold */
+  --primary-foreground: oklch(0.21 0.045 78); /* #261A00  warm near-black — label on gold */
   --secondary: var(--iris-600);
   --secondary-foreground: oklch(0.99 0 0);
   --muted: var(--grey-100);
@@ -170,7 +174,7 @@
   --popover: var(--ink-850);
   --popover-foreground: oklch(0.97 0.004 285);
   --primary: var(--gold-500);
-  --primary-foreground: oklch(0.18 0.030 280);
+  --primary-foreground: oklch(0.21 0.045 78); /* #261A00  warm near-black — label on gold */
   --secondary: var(--iris-500);
   --secondary-foreground: oklch(0.99 0 0);
   --muted: var(--ink-800);
@@ -181,6 +185,7 @@
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: var(--iris-400);
+  --ink-muted: oklch(0.68 0.010 286); /* lighter grey — secondary text on dark */
   --success: oklch(0.72 0.160 155);
   --chart-1: var(--gold-400);
   --chart-2: var(--iris-400);

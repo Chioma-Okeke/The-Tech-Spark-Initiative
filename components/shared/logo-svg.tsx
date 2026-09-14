@@ -1,6 +1,8 @@
-export const LogoSVG = () => {
+import type { SVGProps } from "react"
+
+export const LogoSVG = (props: SVGProps<SVGSVGElement>) => {
     return (
-        <svg width="133" height="89" viewBox="0 0 133 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="120" height="78" viewBox="0 0 133 89" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
             <rect width="132.744" height="88.4958" fill="url(#pattern0_247_3058)" />
             <defs>
                 <pattern id="pattern0_247_3058" patternContentUnits="objectBoundingBox" width="1" height="1">

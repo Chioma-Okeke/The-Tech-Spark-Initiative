@@ -31,7 +31,7 @@ export default function BackToTop() {
                         <ChevronUp
                             size={50}
                             color="black"
-                            className="group-hover:stroke-white"
+                            className="stroke-white"
                         />
                     </Button>
                 )

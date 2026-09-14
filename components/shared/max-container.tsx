@@ -3,7 +3,7 @@ import { ReactNode } from "react"
 
 const MaxContainer = ({ children, className }: {
     children: ReactNode,
-    className: string
+    className?: string
 }) => {
     return (
         <div className={cn("w-full max-w-360 mx-auto", className)}>
