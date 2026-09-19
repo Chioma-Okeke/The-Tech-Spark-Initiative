@@ -1,106 +1,155 @@
-import { Briefcase, Share2, User } from "lucide-react"
-import { Award, BookIcon, CircleCheck, Clock, CodeBlock, Crown, Globe, Lightbulb, Network, Puzzle, Rocket, Search, Target, Terminal, Users, Wrench, Zap } from "@/icons"
-import { BaselineOption, CommitmentPath, CoreValue, Course, EvaluationCriterion, ImpactCategory, InvolvementOption, JourneyStep, MethodologyStep, MultiplierStep, ScholarshipStat, ScholarshipTier, SparkGlossaryEntry, SparkProject } from "@/types"
+import {
+    Briefcase,
+    Church,
+    GraduationCap,
+    HandCoins,
+    HeartHandshake,
+    Share2,
+    SquareCheck,
+    SquareTerminal,
+    Store,
+    User,
+} from "lucide-react";
+import {
+    Award,
+    BookIcon,
+    CircleCheck,
+    Clock,
+    CodeBlock,
+    Crown,
+    Globe,
+    Lightbulb,
+    Network,
+    Puzzle,
+    Rocket,
+    Search,
+    Target,
+    Terminal,
+    Users,
+    Wrench,
+    Zap,
+} from "@/icons";
+import {
+    BaselineOption,
+    CommitmentPath,
+    CompoundingStep,
+    CoreValue,
+    Course,
+    EvaluationCriterion,
+    ImpactCategory,
+    InnovationPillar,
+    InvolvementOption,
+    JourneyStep,
+    MethodologyStep,
+    MultiplierStep,
+    OutreachPillar,
+    ScholarshipStat,
+    ScholarshipTier,
+    SparkGlossaryEntry,
+    SparkProject,
+} from "@/types";
 
 export const pages = [
     {
         name: "About",
-        link: "/about"
+        link: "/about",
     },
     {
         name: "Academy",
-        link: "/academy"
+        link: "/academy",
     },
     {
         name: "Innovation",
-        link: "/innovation"
+        link: "/innovation",
     },
     {
         name: "Impact",
-        link: "/impact"
+        link: "/impact",
     },
     {
         name: "Stories",
-        link: "/stories"
+        link: "/stories",
     },
     {
         name: "Learn",
-        link: "/learn"
+        link: "/learn",
     },
     {
         name: "Volunteer",
-        link: "/volunteer"
+        link: "/volunteer",
     },
     {
         name: "Mentor",
-        link: "/mentor"
+        link: "/mentor",
     },
     {
         name: "Partner",
-        link: "/partner"
+        link: "/partner",
     },
     {
         name: "Support",
-        link: "/support"
+        link: "/support",
     },
     {
         name: "Contact",
-        link: "/contact"
+        link: "/contact",
     },
-]
+];
 
 export const navItems = [
     {
         name: "Home",
-        link: "/"
+        link: "/",
     },
     {
         name: "About",
-        link: "/about"
+        link: "/about",
     },
     {
         name: "Academy",
-        link: "/academy"
+        link: "/academy",
     },
     {
         name: "Innovation",
-        link: "/innovation"
+        link: "/innovation",
     },
     {
         name: "Get Involved",
-        link: "/get-involved"
+        link: "/get-involved",
     },
     {
         name: "Scholarships",
-        link: "/scholarships"
-    }
-]
-
-
+        link: "/scholarships",
+    },
+];
 
 export const journeySteps: JourneyStep[] = [
     {
         name: "Learn",
-        description: "Master foundational skills through rigorous, industry-aligned curricula.",
-        icon: BookIcon
+        description:
+            "Master foundational skills through rigorous, industry-aligned curricula.",
+        icon: BookIcon,
     },
     {
         name: "Build",
-        description: "Apply knowledge to create functional, real-world digital products.",
-        icon: CodeBlock
+        description:
+            "Apply knowledge to create functional, real-world digital products.",
+        icon: CodeBlock,
     },
     {
         name: "Solve",
-        description: "Tackle complex problems using design thinking and innovative logic.",
-        icon: Puzzle
+        description:
+            "Tackle complex problems using design thinking and innovative logic.",
+        icon: Puzzle,
     },
     {
         name: "Impact",
-        description: "Deploy solutions that drive meaningful change in communities.",
+        description:
+            "Deploy solutions that drive meaningful change in communities.",
         icon: Rocket,
-        accent: true
-    }
-]
+        accent: true,
+    },
+];
 
 export const coreValues: CoreValue[] = [
     {
@@ -110,7 +159,7 @@ export const coreValues: CoreValue[] = [
         icon: Crown,
         tone: "neutral",
         layout: "feature",
-        gridClass: "md:row-span-2"
+        gridClass: "md:row-span-2",
     },
     {
         name: "Innovation",
@@ -119,7 +168,7 @@ export const coreValues: CoreValue[] = [
         icon: Lightbulb,
         tone: "iris",
         layout: "inline",
-        gridClass: "md:col-span-2"
+        gridClass: "md:col-span-2",
     },
     {
         name: "Excellence",
@@ -127,7 +176,7 @@ export const coreValues: CoreValue[] = [
             "Demand uncompromising quality in every line of code, design, and interaction.",
         icon: Award,
         tone: "gold",
-        layout: "corner"
+        layout: "corner",
     },
     {
         name: "Impact",
@@ -135,7 +184,7 @@ export const coreValues: CoreValue[] = [
             "Measuring our success by the tangible, positive transformation we bring to communities.",
         icon: Globe,
         tone: "iris",
-        layout: "corner"
+        layout: "corner",
     },
     {
         name: "Inclusivity",
@@ -144,36 +193,54 @@ export const coreValues: CoreValue[] = [
         icon: Users,
         tone: "greige",
         layout: "banner",
-        gridClass: "md:col-span-3"
-    }
-]
+        gridClass: "md:col-span-3",
+    },
+];
 
 export const missionAndVision = [
     {
         icon: Target,
         name: "Mission",
-        content: "To provide structured, value-driven tech education and innovation programs that build skilled talent, encourage research and practical problem-solving, and extend compassionate support to vulnerable people as part of our faith-based commitment."
+        content:
+            "To provide structured, value-driven tech education and innovation programs that build skilled talent, encourage research and practical problem-solving, and extend compassionate support to vulnerable people as part of our faith-based commitment.",
     },
     {
         icon: Target,
         name: "Vision",
-        content: "To provide structured, value-driven tech education and innovation programs that build skilled talent, encourage research and practical problem-solving, and extend compassionate support to vulnerable people as part of our faith-based commitment."
+        content:
+            "To raise purpose-driven innovators who use technology, faith, and excellence to transform lives, solve real-world problems, and uplift communities.",
     },
-]
+];
 
 export const methodologySteps: MethodologyStep[] = [
-    { name: "Discover", caption: "Identify the problem", icon: Search, tone: "neutral" },
-    { name: "Learn", caption: "Acquire the tools", icon: BookIcon, tone: "iris" },
+    {
+        name: "Discover",
+        caption: "Identify the problem",
+        icon: Search,
+        tone: "neutral",
+    },
+    {
+        name: "Learn",
+        caption: "Acquire the tools",
+        icon: BookIcon,
+        tone: "iris",
+    },
     { name: "Build", caption: "Execute solutions", icon: Wrench, tone: "gold" },
-    { name: "Impact", caption: "Create change", icon: Globe, tone: "gold-outline" },
-]
+    {
+        name: "Impact",
+        caption: "Create change",
+        icon: Globe,
+        tone: "gold-outline",
+    },
+];
 
 export const evaluationCriteria: EvaluationCriterion[] = [
     {
         weight: "60%",
         label: "Academic Performance",
         badge: "Primary Weight",
-        description: "Academic activities, quizzes, assignments and project progress.",
+        description:
+            "Academic activities, quizzes, assignments and project progress.",
         tags: ["Project Sprints", "Technical Quizzes", "Production Code"],
         tone: "gold",
         icon: Terminal,
@@ -188,7 +255,7 @@ export const evaluationCriteria: EvaluationCriterion[] = [
         tone: "iris",
         icon: Users,
     },
-]
+];
 
 export const featuredCourses: Course[] = [
     {
@@ -208,7 +275,7 @@ export const featuredCourses: Course[] = [
         description: "Create intuitive, accessible digital experiences.",
         duration: "6 Weeks",
     },
-]
+];
 
 export const involvementOptions: InvolvementOption[] = [
     {
@@ -257,13 +324,13 @@ export const involvementOptions: InvolvementOption[] = [
         href: "#",
         layout: "plain",
     },
-]
+];
 
 export const scholarshipStats: ScholarshipStat[] = [
     { value: "20%", label: "Universal Baseline" },
     { value: "5 Tiers", label: "Voluntary Pathways" },
     { value: "6 Tracks", label: "Impact Disciplines" },
-]
+];
 
 export const scholarshipTiers: ScholarshipTier[] = [
     {
@@ -292,7 +359,7 @@ export const scholarshipTiers: ScholarshipTier[] = [
         description: "4 approved impact projects & maximum service",
         highlight: true,
     },
-]
+];
 
 export const baselineOptions: BaselineOption[] = [
     {
@@ -300,7 +367,10 @@ export const baselineOptions: BaselineOption[] = [
         title: "Project 1: Build Your Professional Presence",
         description:
             "Comprehensive LinkedIn profile optimization highlighting technical capabilities, combined with 1 substantive insight posts documenting your learning journey inside TVI.",
-        checklist: ["Profile bio & skills portfolio revamp", "1 verified public reflective posts"],
+        checklist: [
+            "Profile bio & skills portfolio revamp",
+            "1 verified public reflective posts",
+        ],
         icon: User,
     },
     {
@@ -308,7 +378,10 @@ export const baselineOptions: BaselineOption[] = [
         title: "Project 2: Share Your Learning",
         description:
             "Author and publish 1 educational technical insights across at least 2 public knowledge-sharing platforms (e.g., Substack, Medium, dev.to, or GitHub discussions).",
-        checklist: ["2 external distribution platforms", "Concrete code snippets & technical breakdowns"],
+        checklist: [
+            "2 external distribution platforms",
+            "Concrete code snippets & technical breakdowns",
+        ],
         icon: Share2,
     },
     {
@@ -316,18 +389,21 @@ export const baselineOptions: BaselineOption[] = [
         title: "Project 3: Capstone Product",
         description:
             "Discipline-specific final build. Interactive dashboards, fully deployable web applications, AI models, or validated product architecture presented to industry evaluators.",
-        checklist: ["Live deployed product demonstration", "Comprehensive codebase & technical defense"],
+        checklist: [
+            "Live deployed product demonstration",
+            "Comprehensive codebase & technical defense",
+        ],
         icon: Briefcase,
         highlight: true,
     },
-]
+];
 
 export const commitmentPaths: CommitmentPath[] = [
     {
         index: "01",
         title: "Path 1: Service + Impact",
         description:
-            "Complete approved scholarship projects across the 6 categories using your emerging technical skills. You directly build assets, teach fellow community members, and elevate the next cohort.",
+            "Complete approved scholarship projects across the 6 categories using your emerging technical skills. You directly build assets, teach fellow community members, and elevate the next Gen.",
         checklist: [
             "Zero out-of-pocket payment required",
             "Real public portfolio additions",
@@ -347,7 +423,7 @@ export const commitmentPaths: CommitmentPath[] = [
         ],
         tone: "gold",
     },
-]
+];
 
 export const impactCategories: ImpactCategory[] = [
     {
@@ -410,7 +486,7 @@ export const impactCategories: ImpactCategory[] = [
         tone: "gold",
         href: "#",
     },
-]
+];
 
 export const multiplierSteps: MultiplierStep[] = [
     { index: "01", label: "TVI Supports You" },
@@ -419,7 +495,7 @@ export const multiplierSteps: MultiplierStep[] = [
     { index: "04", label: "You Serve Others" },
     { index: "05", label: "Peers Benefit" },
     { index: "06", label: "Ecosystem Grows", highlight: true },
-]
+];
 
 export const sparkProjects: SparkProject[] = [
     {
@@ -428,7 +504,7 @@ export const sparkProjects: SparkProject[] = [
             "A practical workflow using Large Language Models to convert complex lecture notes into customized study guides, flashcards, and practice quizzes tailored to individual learning speeds.",
         category: "Learning Support",
         tone: "iris",
-        developedBy: "Cohort 4 Students",
+        developedBy: "Gen 4 Students",
         icon: Lightbulb,
         href: "#",
     },
@@ -450,7 +526,70 @@ export const sparkProjects: SparkProject[] = [
         icon: CircleCheck,
         href: "#",
     },
-]
+];
+
+export const innovationPillars: InnovationPillar[] = [
+    {
+        name: "Serving God",
+        description:
+            "Exercising sacred stewardship and Christian ethics across software architecture, artificial intelligence, and digital products.",
+        icon: Church,
+        caption: "PURPOSE FIRST",
+    },
+    {
+        name: "Solving Problems",
+        description:
+            "Engineering tangible answers to critical African challenges in fintech, precision agritech, healthcare delivery, and civic infrastructure.",
+        icon: SquareCheck,
+        caption: "REAL IMPACT",
+    },
+    {
+        name: "Creating Builders",
+        description:
+            "Accelerating ambitious Sparks into elite production engineers, technical leaders, and venture founders with ironclad work ethic.",
+        icon: SquareTerminal,
+        caption: "MASTERY & CRAFT",
+    },
+    {
+        name: "Sustainable Funding",
+        description:
+            "Deploying enterprise products and commercial tech services to organically finance full scholarships and community expansion indefinitely.",
+        icon: HandCoins,
+        caption: "SELF-SUSTAINING",
+        highlight: true,
+    },
+];
+
+export const outreachPillars: OutreachPillar[] = [
+    {
+        name: "Targeted Enablement",
+        description:
+            "Equipping promising grassroots talents with tools, starter capital, and digital frameworks to launch viable micro-businesses and sustainable local ventures.",
+        icon: Store,
+        caption: "Economic Independence",
+    },
+    {
+        name: "Educational Assistance",
+        description:
+            "Sponsoring comprehensive school tuition, practical digital literacy classes, and modern learning hardware for children and underserved youth.",
+        icon: GraduationCap,
+        caption: "Foundational Growth",
+    },
+    {
+        name: "Vulnerable Households",
+        description:
+            "Providing emergency sanctuary, psycho-social trauma restoration, and dignified digital livelihood tracks for orphans, single parents, and survivors of assault.",
+        icon: HeartHandshake,
+        caption: "Restorative Hope",
+        highlight: true,
+    },
+];
+
+export const compoundingSteps: CompoundingStep[] = [
+    { value: "1,000", label: "SPARKS EMPOWERED" },
+    { value: "10,000+", label: "LIVES TRANSFORMED", highlight: true },
+    { value: "Cycle", label: "CONTINUES ON" },
+];
 
 export const sparkGlossary: SparkGlossaryEntry[] = [
     {
@@ -466,11 +605,11 @@ export const sparkGlossary: SparkGlossaryEntry[] = [
     {
         term: "Gen",
         subtitle: "Community of Sparks",
-        formula: "Gen = Cohort",
+        formula: "Gen = Class",
         badge: "What's a Gen?",
         description:
-            "A Gen is a cohort of Sparks going through the TVI Academy, building and growing together during their TVI journey.",
+            "A Gen is a community of Sparks going through the TVI Academy, building and growing together during their TVI journey.",
         icon: Network,
         tone: "iris",
     },
-]
+];

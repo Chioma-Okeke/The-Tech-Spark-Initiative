@@ -121,7 +121,7 @@ const SparksProjectsSection = () => {
                                         "mt-6 h-auto w-fit rounded-lg px-6 py-3 text-sm font-bold"
                                     )}
                                 >
-                                    Join our next AI Cohort
+                                    Join our next AI Gen
                                 </Link>
                             </div>
                         </div>

@@ -143,3 +143,30 @@ export type SparkProject = {
     icon: IconComponent
     href: string
 }
+
+export type InnovationPillar = {
+    name: string
+    description: string
+    icon: IconComponent
+    /** small uppercase label under the divider, e.g. "PURPOSE FIRST" */
+    caption: string
+    /** gold-ringed treatment for the funding-model card */
+    highlight?: boolean
+}
+
+export type OutreachPillar = {
+    name: string
+    description: string
+    icon: IconComponent
+    /** small label next to the checkmark, e.g. "Economic Independence" */
+    caption: string
+    /** gold-accented treatment for the vulnerable-households card */
+    highlight?: boolean
+}
+
+export type CompoundingStep = {
+    /** e.g. "1,000" or "Cycle" */
+    value: string
+    label: string
+    highlight?: boolean
+}
