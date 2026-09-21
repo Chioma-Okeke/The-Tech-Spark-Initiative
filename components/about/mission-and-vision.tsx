@@ -5,7 +5,14 @@ import { cn } from "cn"
 
 const MissionAndVision = () => {
     return (
-        <section className="bg-[#0B0F10] py-10 md:py-16 lg:py-24">
+        <section className="relative overflow-hidden bg-[#101120] py-20 md:py-16 lg:py-28">
+            <svg
+                aria-hidden
+                preserveAspectRatio="none"
+                className="pointer-events-none absolute inset-0 hidden h-full w-full text-aqua-400/90 md:block"
+            >
+                <line x1="80%" y1="0%" x2="100%" y2="22%" stroke="currentColor" strokeWidth="1" />
+            </svg>
             <PaddingContainer>
                 <MaxContainer className="relative flex w-full flex-col gap-8 max-w-290 lg:h-94.25 lg:flex-row lg:justify-between">
                     {missionAndVision.map((item, index) => {
@@ -25,7 +32,7 @@ const MissionAndVision = () => {
                                         })} />
                                         <h3 className="font-bold text-2xl sm:text-3xl text-[#E0E3E5]">{item.name}</h3>
                                     </div>
-                                    <p className="text-base sm:text-lg leading-relaxed text-[#C5C6D0]">{item.content}</p>
+                                    <p className="text-base md:text-lg leading-relaxed text-[#C5C6D0]">{item.content}</p>
                                 </div>
                             </div>
                         )
