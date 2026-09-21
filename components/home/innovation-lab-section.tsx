@@ -19,11 +19,11 @@ const PillarCard = ({ pillar }: { pillar: InnovationPillar }) => {
         >
             <span
                 className={cn(
-                    "grid size-11 place-items-center rounded-xl",
-                    pillar.highlight ? "bg-gold-500/15 text-gold-400" : "bg-iris-500/15 text-iris-300"
+                    "grid size-11 lg:size-14 place-items-center rounded-xl",
+                    pillar.highlight ? "bg-[#FFB300]/20 text-[#FFB300]" : "bg-[#6200EE]/20 border-[#6200EE]/40 text-[#E0E0FF]"
                 )}
             >
-                <Icon className="size-5" />
+                <Icon className="size-5 lg:size-6" />
             </span>
             <h3
                 className={cn(
@@ -38,10 +38,7 @@ const PillarCard = ({ pillar }: { pillar: InnovationPillar }) => {
             </p>
             <hr className="mt-6 border-white/10" />
             <span
-                className={cn(
-                    "mt-4 font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em]",
-                    pillar.highlight ? "text-gold-400" : "text-muted-foreground"
-                )}
+                className="mt-4 font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-gold-400"
             >
                 {pillar.caption}
             </span>
@@ -70,9 +67,9 @@ const InnovationLabSection = () => {
                             <line x1="88%" y1="100%" x2="100%" y2="5%" stroke="currentColor" strokeWidth="1" />
                         </svg>
 
-                        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-8">
-                            <div className="relative z-10 text-center lg:text-left">
-                                <h2 className="text-4xl font-extrabold leading-tight sm:text-5xl">
+                        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-8">
+                            <div className="relative z-10 text-center lg:text-left max-lg:flex items-center justify-center">
+                                <h2 className="text-3xl font-extrabold leading-tight sm:text-5xl lg:text-[70px] w-full max-w-142.75">
                                     <span className="block text-iris-400">TVI</span>
                                     <span className="block text-primary">Innovation Lab</span>
                                 </h2>
@@ -80,8 +77,8 @@ const InnovationLabSection = () => {
 
                             <div className="relative z-10">
                                 {/* translucent brand blobs behind the illustration */}
-                                <div className="absolute left-[6%] top-[42%] size-16 -rotate-6 rounded-[28px] bg-ink-700/60 sm:size-20" />
-                                <div className="absolute left-[16%] top-[64%] size-14 rotate-6 rounded-[24px] bg-iris-800/50 sm:size-16" />
+                                <div className="absolute lg:left-[-4%] lg:top-[47%] size-12 rotate-20 rounded-[13px] bg-[#F5AC27]/20 sm:size-15" />
+                                <div className="absolute right-0 top-[20%] lg:left-[-4%] lg:top-[64%] size-12 rotate-6 rounded-[13px] bg-[#D481F2]/20 sm:size-15" />
 
                                 <Image
                                     src="/innovators.png"
@@ -89,10 +86,11 @@ const InnovationLabSection = () => {
                                     width={963}
                                     height={751}
                                     sizes="(min-width: 1024px) 640px, 100vw"
-                                    className="relative h-auto w-full max-w-2xl object-contain lg:ml-auto"
+                                    className="relative max-lg:mx-auto h-auto w-full max-w-2xl object-contain lg:ml-auto lg:max-w-120.5"
                                 />
                             </div>
                         </div>
+                        <div className="hidden lg:block absolute left-[20%] bottom-[7%] size-14 -rotate-20 rounded-[13px] bg-[#D481F2]/20" />
                     </div>
 
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

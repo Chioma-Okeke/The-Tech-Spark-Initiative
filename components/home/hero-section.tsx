@@ -7,7 +7,7 @@ import ImageIllustration from "./image-illustration"
 
 const HeroSection = () => {
     return (
-        <section className="dark overflow-hidden bg-ink-900 text-foreground">
+        <section className="dark overflow-hidden bg-[#F8FAFC] max-lg:bg-ink-900 text-foreground">
             {/* ---------- Hero ---------- */}
             <div className="relative">
                 {/* decorative diagonal lines */}
@@ -21,9 +21,9 @@ const HeroSection = () => {
                     <line x1="46%" y1="118%" x2="99%" y2="18%" stroke="currentColor" strokeWidth="1" />
                 </svg>
 
-                <PaddingContainer className="relative">
-                    <MaxContainer>
-                        <div className="grid items-center gap-12 py-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-10 lg:py-24">
+                <PaddingContainer className="relative bg-ink-900 w-[80%] rounded-tr-[19px]">
+                    <MaxContainer className=" max-w-220.5">
+                        <div className="max-lg:flex justify-center items-center gap-12 py-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-10 lg:pt-34.5 lg:pb-4.75">
                             {/* Copy */}
                             <div className="relative z-10 max-w-xl text-center lg:text-left">
                                 <h1 className="text-4xl font-extrabold uppercase leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
@@ -45,27 +45,25 @@ const HeroSection = () => {
                                     </Button>
                                 </div>
                             </div>
-
-                            {/* Image */}
-                            <div className="relative z-10">
-                                <ImageIllustration />
-                            </div>
                         </div>
                     </MaxContainer>
                 </PaddingContainer>
+                <div className="relative z-10 mt-4 lg:absolute lg:top-0 lg:right-[3%] lg:mt-0 max-md:px-3">
+                    <ImageIllustration />
+                </div>
             </div>
 
             {/* ---------- A Journey of Transformation ---------- */}
-            <PaddingContainer className="pb-16 md:pb-24">
-                <MaxContainer className="space-y-10 md:space-y-12">
+            <PaddingContainer className="pb-16 md:pb-24 pt-20 lg:pt-58 bg-ink-900">
+                <MaxContainer className="space-y-10 md:space-y-12 relative">
                     <h2 className="text-center text-3xl font-bold md:text-4xl">
                         A Journey of Transformation
                     </h2>
-                    <div className="mx-auto grid max-w-297.5 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    <div className="relative mx-auto grid max-w-297.5 gap-6 sm:grid-cols-2 lg:grid-cols-4">
                         {journeySteps.map((step) => (
                             <article
                                 key={step.name}
-                                className="flex flex-col items-center rounded-2xl border border-iris-800/30 bg-ink-850/60 p-8 text-center backdrop-blur-xl"
+                                className="z-10 flex flex-col items-center rounded-2xl border border-iris-800/30 bg-ink-850/60 p-6 text-center backdrop-blur-xl"
                             >
                                 <span
                                     className={cn(
@@ -90,6 +88,7 @@ const HeroSection = () => {
                                 </p>
                             </article>
                         ))}
+                        <hr className="absolute left-1/2 top-1/2 h-full w-0 -translate-x-1/2 -translate-y-1/2 border border-[#8333C6] sm:hidden lg:block lg:h-0 lg:w-full" />
                     </div>
                 </MaxContainer>
             </PaddingContainer>

@@ -5,211 +5,227 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-montserrat: var(--font-montserrat);
+    --font-inter: var(--font-inter);
+    --font-heading: var(--font-montserrat);
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
 
-  /* ---------------------------------------------------------------
+    /* ---------------------------------------------------------------
      TVI brand primitive scales
      Utilities: bg-ink-900, text-iris-400, bg-gold-500, text-aqua-400,
      bg-greige, text-success ...
      Names are deliberately non-Tailwind (ink / iris / gold / aqua) so
      they never collide with the built-in violet / cyan / amber palettes.
   --------------------------------------------------------------- */
-  --color-ink-950: var(--ink-950);
-  --color-ink-900: var(--ink-900);
-  --color-ink-850: var(--ink-850);
-  --color-ink-800: var(--ink-800);
-  --color-ink-700: var(--ink-700);
-  --color-ink-600: var(--ink-600);
-  --color-ink-muted: var(--ink-muted);
+    --color-ink-950: var(--ink-950);
+    --color-ink-900: var(--ink-900);
+    --color-ink-850: var(--ink-850);
+    --color-ink-800: var(--ink-800);
+    --color-ink-700: var(--ink-700);
+    --color-ink-600: var(--ink-600);
+    --color-ink-muted: var(--ink-muted);
 
-  --color-iris-950: var(--iris-950);
-  --color-iris-800: var(--iris-800);
-  --color-iris-700: var(--iris-700);
-  --color-iris-600: var(--iris-600);
-  --color-iris-500: var(--iris-500);
-  --color-iris-400: var(--iris-400);
-  --color-iris-300: var(--iris-300);
-  --color-iris-100: var(--iris-100);
+    --color-iris-950: var(--iris-950);
+    --color-iris-800: var(--iris-800);
+    --color-iris-700: var(--iris-700);
+    --color-iris-600: var(--iris-600);
+    --color-iris-500: var(--iris-500);
+    --color-iris-400: var(--iris-400);
+    --color-iris-300: var(--iris-300);
+    --color-iris-100: var(--iris-100);
 
-  --color-gold-600: var(--gold-600);
-  --color-gold-500: var(--gold-500);
-  --color-gold-400: var(--gold-400);
-  --color-gold-100: var(--gold-100);
+    --color-gold-600: var(--gold-600);
+    --color-gold-500: var(--gold-500);
+    --color-gold-400: var(--gold-400);
+    --color-gold-100: var(--gold-100);
 
-  --color-aqua-400: var(--aqua-400);
+    --color-aqua-400: var(--aqua-400);
 
-  --color-paper: var(--paper);
-  --color-grey-100: var(--grey-100);
-  --color-grey-200: var(--grey-200);
-  --color-grey-300: var(--grey-300);
-  --color-greige: var(--greige-100);
+    --color-paper: var(--paper);
+    --color-grey-100: var(--grey-100);
+    --color-grey-200: var(--grey-200);
+    --color-grey-300: var(--grey-300);
+    --color-greige: var(--greige-100);
 
-  --color-success: var(--success);
-  --color-success-foreground: var(--success-foreground);
+    --color-success: var(--success);
+    --color-success-foreground: var(--success-foreground);
 }
 
 :root {
-  /* === Brand primitives ======================================== */
+    /* === Brand primitives ======================================== */
 
-  /* Ink — brand navy (hero / footer / every dark section) */
-  --ink-950: oklch(0.13 0.020 280); /* #0A0A12  deep footer            */
-  --ink-900: oklch(0.17 0.030 280); /* #0E0E20  hero / page background */
-  --ink-850: oklch(0.21 0.038 280); /* #14142B  raised dark surface    */
-  --ink-800: oklch(0.26 0.045 280); /* #1B1B38  card on dark           */
-  --ink-700: oklch(0.33 0.060 280); /* #262650  border / divider on dark */
-  --ink-600: oklch(0.43 0.075 280); /* #3A3A6B  hairline / muted stroke  */
-  --ink-muted: oklch(0.40 0.007 286); /* #46464D  secondary / nav text on light */
+    /* Ink — brand navy (hero / footer / every dark section) */
+    --ink-950: oklch(0.13 0.02 280); /* #0A0A12  deep footer            */
+    --ink-900: oklch(0.17 0.03 280); /* #0E0E20  hero / page background */
+    --ink-850: oklch(22.811% 0.0487 275.013); /* #14142B  raised dark surface    */
+    --ink-800: oklch(0.26 0.045 280); /* #1B1B38  card on dark           */
+    --ink-700: oklch(0.33 0.06 280); /* #262650  border / divider on dark */
+    --ink-600: oklch(0.43 0.075 280); /* #3A3A6B  hairline / muted stroke  */
+    --ink-muted: oklch(
+        0.4 0.007 286
+    ); /* #46464D  secondary / nav text on light */
 
-  /* Iris — brand violet (logo, icon chips, lavender headings, purple cards) */
-  --iris-950: oklch(0.24 0.075 293); /* #1C1436  purple-tinted dark section */
-  --iris-800: oklch(0.30 0.190 300); /* #41006F  deep violet — card borders on dark */
-  --iris-700: oklch(0.48 0.220 293); /* deep violet — text on light tint    */
-  --iris-600: oklch(0.55 0.240 293); /* #7C3AED  core brand violet          */
-  --iris-500: oklch(0.63 0.200 293); /* #8B5CF6  violet on dark             */
-  --iris-400: oklch(0.75 0.110 298); /* #B39DDB  lavender display headings  */
-  --iris-300: oklch(0.84 0.070 300); /* soft lavender — accent text on dark */
-  --iris-100: oklch(0.95 0.022 300); /* #F3E9FB  lavender card fill         */
+    /* Iris — brand violet (logo, icon chips, lavender headings, purple cards) */
+    --iris-950: oklch(0.24 0.075 293); /* #1C1436  purple-tinted dark section */
+    --iris-800: oklch(30.522% 0.16047 302.84); /* #41006F  deep violet — card borders on dark */
+    --iris-700: oklch(48.02% 0.22077 293.022); /* deep violet — text on light tint    */
+    --iris-600: oklch(50.975% 0.21484 304.457); /* #7C3AED  core brand violet          */
+    --iris-500: oklch(0.63 0.2 293); /* #8B5CF6  violet on dark             */
+    --iris-400: oklch(0.75 0.11 298); /* #B39DDB  lavender display headings  */
+    --iris-300: oklch(0.84 0.07 300); /* soft lavender — accent text on dark */
+    --iris-100: oklch(0.95 0.022 300); /* #F3E9FB  lavender card fill         */
 
-  /* Gold — primary action (CTA buttons, key display words, highlights) */
-  --gold-600: oklch(0.73 0.150 70);  /* #E09A0B  pressed / text-safe gold */
-  --gold-500: oklch(0.831 0.169 84);  /* #FBBC00  core CTA gold / --primary       */
-  --gold-400: oklch(0.86 0.135 85);  /* #F8C043  hover / gold on dark     */
-  --gold-100: oklch(0.94 0.032 85);  /* #F6ECD6  cream card fill          */
+    /* Gold — primary action (CTA buttons, key display words, highlights) */
+    --gold-600: oklch(0.73 0.15 70); /* #E09A0B  pressed / text-safe gold */
+    --gold-500: oklch(79.481% 0.1574 76.068); /* #FBBC00  core CTA gold / --primary       */
+    --gold-400: oklch(0.86 0.135 85); /* #F8C043  hover / gold on dark     */
+    --gold-100: oklch(0.94 0.032 85); /* #F6ECD6  cream card fill          */
 
-  /* Aqua — decorative accent only (thin diagram lines, never text/CTAs) */
-  --aqua-400: oklch(0.81 0.115 190); /* #3DD6D0 */
+    /* Aqua — decorative accent only (thin diagram lines, never text/CTAs) */
+    --aqua-400: oklch(0.81 0.115 190); /* #3DD6D0 */
 
-  /* Neutrals */
-  --paper: oklch(1 0 0);             /* #FFFFFF  cards / crisp surfaces        */
-  --grey-100: oklch(0.96 0 0);       /* #F2F2F2  soft light section            */
-  --grey-200: oklch(0.92 0 0);       /* #EBEBEB  light border                  */
-  --grey-300: oklch(0.845 0 0);      /* #CDCDCD  "Core Values" / page grey band */
-  --greige-100: oklch(0.93 0.008 90);/* #EDE9E0  warm neutral card fill        */
+    /* Neutrals */
+    --paper: oklch(1 0 0); /* #FFFFFF  cards / crisp surfaces        */
+    --grey-100: oklch(0.96 0 0); /* #F2F2F2  soft light section            */
+    --grey-200: oklch(0.92 0 0); /* #EBEBEB  light border                  */
+    --grey-300: oklch(0.845 0 0); /* #CDCDCD  "Core Values" / page grey band */
+    --greige-100: oklch(
+        0.93 0.008 90
+    ); /* #EDE9E0  warm neutral card fill        */
 
-  /* Status */
-  --success: oklch(0.66 0.150 150);
-  --success-foreground: oklch(0.99 0 0);
+    /* Status */
+    --success: oklch(0.66 0.15 150);
+    --success-foreground: oklch(0.99 0 0);
 
-  /* === Semantic tokens — LIGHT surfaces ======================== */
-  --background: var(--paper);
-  --foreground: oklch(0.23 0.028 280);        /* ink text on light */
-  --card: var(--paper);
-  --card-foreground: oklch(0.23 0.028 280);
-  --popover: var(--paper);
-  --popover-foreground: oklch(0.23 0.028 280);
-  --primary: var(--gold-500);
-  --primary-foreground: oklch(0.21 0.045 78); /* #261A00  warm near-black — label on gold */
-  --secondary: var(--iris-600);
-  --secondary-foreground: oklch(0.99 0 0);
-  --muted: var(--grey-100);
-  --muted-foreground: oklch(0.50 0.020 285);
-  --accent: var(--iris-100);
-  --accent-foreground: var(--iris-700);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.90 0.004 285);
-  --input: oklch(0.90 0.004 285);
-  --ring: var(--iris-500);
-  --chart-1: var(--gold-500);
-  --chart-2: var(--iris-600);
-  --chart-3: var(--aqua-400);
-  --chart-4: var(--iris-400);
-  --chart-5: var(--ink-700);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.98 0 0);
-  --sidebar-foreground: oklch(0.23 0.028 280);
-  --sidebar-primary: var(--iris-600);
-  --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: var(--iris-100);
-  --sidebar-accent-foreground: var(--iris-700);
-  --sidebar-border: oklch(0.90 0.004 285);
-  --sidebar-ring: var(--iris-500);
+    /* === Semantic tokens — LIGHT surfaces ======================== */
+    --background: var(--paper);
+    --foreground: oklch(0.23 0.028 280); /* ink text on light */
+    --card: var(--paper);
+    --card-foreground: oklch(0.23 0.028 280);
+    --popover: var(--paper);
+    --popover-foreground: oklch(0.23 0.028 280);
+    --primary: var(--gold-500);
+    --primary-foreground: oklch(
+        0.21 0.045 78
+    ); /* #261A00  warm near-black — label on gold */
+    --secondary: var(--iris-600);
+    --secondary-foreground: oklch(0.99 0 0);
+    --muted: var(--grey-100);
+    --muted-foreground: oklch(0.5 0.02 285);
+    --accent: var(--iris-100);
+    --accent-foreground: var(--iris-700);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.9 0.004 285);
+    --input: oklch(0.9 0.004 285);
+    --ring: var(--iris-500);
+    --chart-1: var(--gold-500);
+    --chart-2: var(--iris-600);
+    --chart-3: var(--aqua-400);
+    --chart-4: var(--iris-400);
+    --chart-5: var(--ink-700);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.98 0 0);
+    --sidebar-foreground: oklch(0.23 0.028 280);
+    --sidebar-primary: var(--iris-600);
+    --sidebar-primary-foreground: oklch(0.99 0 0);
+    --sidebar-accent: var(--iris-100);
+    --sidebar-accent-foreground: var(--iris-700);
+    --sidebar-border: oklch(0.9 0.004 285);
+    --sidebar-ring: var(--iris-500);
 }
 
 .dark {
-  /* === Semantic tokens — DARK surfaces (brand-default look) ==== */
-  --background: var(--ink-900);
-  --foreground: oklch(0.97 0.004 285);
-  --card: var(--ink-850);
-  --card-foreground: oklch(0.97 0.004 285);
-  --popover: var(--ink-850);
-  --popover-foreground: oklch(0.97 0.004 285);
-  --primary: var(--gold-500);
-  --primary-foreground: oklch(0.21 0.045 78); /* #261A00  warm near-black — label on gold */
-  --secondary: var(--iris-500);
-  --secondary-foreground: oklch(0.99 0 0);
-  --muted: var(--ink-800);
-  --muted-foreground: oklch(0.72 0.020 285);
-  --accent: var(--iris-950);
-  --accent-foreground: var(--iris-300);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: var(--iris-400);
-  --ink-muted: oklch(0.68 0.010 286); /* lighter grey — secondary text on dark */
-  --success: oklch(0.72 0.160 155);
-  --chart-1: var(--gold-400);
-  --chart-2: var(--iris-400);
-  --chart-3: var(--aqua-400);
-  --chart-4: var(--iris-600);
-  --chart-5: var(--ink-600);
-  --sidebar: var(--ink-950);
-  --sidebar-foreground: oklch(0.97 0.004 285);
-  --sidebar-primary: var(--iris-500);
-  --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: var(--ink-800);
-  --sidebar-accent-foreground: oklch(0.97 0.004 285);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: var(--iris-400);
+    /* === Semantic tokens — DARK surfaces (brand-default look) ==== */
+    --background: var(--ink-900);
+    --foreground: oklch(0.97 0.004 285);
+    --card: var(--ink-850);
+    --card-foreground: oklch(0.97 0.004 285);
+    --popover: var(--ink-850);
+    --popover-foreground: oklch(0.97 0.004 285);
+    --primary: var(--gold-500);
+    --primary-foreground: oklch(
+        0.21 0.045 78
+    ); /* #261A00  warm near-black — label on gold */
+    --secondary: var(--iris-500);
+    --secondary-foreground: oklch(0.99 0 0);
+    --muted: var(--ink-800);
+    --muted-foreground: oklch(0.72 0.02 285);
+    --accent: var(--iris-950);
+    --accent-foreground: var(--iris-300);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: var(--iris-400);
+    --ink-muted: oklch(
+        0.68 0.01 286
+    ); /* lighter grey — secondary text on dark */
+    --success: oklch(0.72 0.16 155);
+    --chart-1: var(--gold-400);
+    --chart-2: var(--iris-400);
+    --chart-3: var(--aqua-400);
+    --chart-4: var(--iris-600);
+    --chart-5: var(--ink-600);
+    --sidebar: var(--ink-950);
+    --sidebar-foreground: oklch(0.97 0.004 285);
+    --sidebar-primary: var(--iris-500);
+    --sidebar-primary-foreground: oklch(0.99 0 0);
+    --sidebar-accent: var(--ink-800);
+    --sidebar-accent-foreground: oklch(0.97 0.004 285);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: var(--iris-400);
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-  html {
-    @apply font-sans;
-  }
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+        @apply font-inter;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-heading;
+    }
 }

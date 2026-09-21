@@ -17,7 +17,7 @@ const NavBar = () => {
     const [open, setOpen] = useState(false)
 
     return (
-        <section className="bg-grey-300">
+        <section className="bg-[#F8FAFC]">
             <PaddingContainer className="py-4">
                 <MaxContainer>
                     <div className="flex items-center justify-between gap-4">

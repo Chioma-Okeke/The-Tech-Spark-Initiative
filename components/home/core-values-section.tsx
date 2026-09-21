@@ -9,18 +9,18 @@ const toneStyles: Record<
     { card: string; chip: string; icon: string }
 > = {
     neutral: {
-        card: "bg-paper",
+        card: "bg-gold-100/20",
         chip: "bg-grey-100 text-foreground",
         icon: "text-foreground",
     },
     greige: {
-        card: "bg-greige",
+        card: "bg-[#F4F0EA] border-[#E0E3E5] border lg:py-20 h-auto",
         chip: "bg-white/70 text-foreground",
         icon: "text-foreground",
     },
     iris: {
-        card: "bg-iris-100",
-        chip: "bg-white/60 text-iris-600",
+        card: "bg-[#F2E7FD]",
+        chip: "bg-iris-600/10 text-iris-600",
         icon: "text-iris-600",
     },
     gold: {
@@ -43,8 +43,8 @@ const ValueCard = ({ value }: { value: CoreValue }) => {
             <article
                 className={cn(cardBase, "flex flex-col justify-between", tone.card, value.gridClass)}
             >
-                <span className={cn("grid size-11 place-items-center rounded-full", tone.chip)}>
-                    <Icon className="size-5" />
+                <span className={cn("grid size-11 lg:size-13 place-items-center rounded-full max-lg:bg-transparent", tone.chip)}>
+                    <Icon className="size-5 lg:size-7" />
                 </span>
                 <div className="mt-10 space-y-2">
                     <h3 className={titleClass}>{value.name}</h3>
@@ -57,17 +57,22 @@ const ValueCard = ({ value }: { value: CoreValue }) => {
     if (value.layout === "inline") {
         return (
             <article
-                className={cn(cardBase, "flex items-start gap-4", tone.card, value.gridClass)}
+                className={cn(cardBase, "flex items-start gap-4", tone.card, value.gridClass, {
+                    "lg:py-15": value.name == "Innovation"
+                })}
             >
                 <span
                     className={cn(
-                        "grid size-11 shrink-0 place-items-center rounded-full",
+                        "grid size-11 lg:size-14 place-items-center rounded-full max-lg:bg-transparent",
                         tone.chip
                     )}
                 >
-                    <Icon className="size-5" />
+                    <Icon className={cn("", {
+                        "lg:w-6 lg:h-7 max-lg:size-5": value.name == "Innovation",
+                        "size-5": value.name == "Impact"
+                    })} />
                 </span>
-                <div className="space-y-2">
+                <div className="space-y-2 max-w-118.25">
                     <h3 className={titleClass}>{value.name}</h3>
                     <p className={descClass}>{value.description}</p>
                 </div>
@@ -108,9 +113,9 @@ const ValueCard = ({ value }: { value: CoreValue }) => {
 
 const CoreValuesSection = () => {
     return (
-        <section className="bg-grey-300">
+        <section className="bg-[#F8FAFC]">
             <PaddingContainer className="py-16 md:py-24">
-                <MaxContainer className="space-y-10 md:space-y-12">
+                <MaxContainer className="space-y-10 md:space-y-12 max-w-292.75">
                     <h2 className="text-center text-3xl font-bold text-foreground md:text-4xl">
                         Core Values
                     </h2>

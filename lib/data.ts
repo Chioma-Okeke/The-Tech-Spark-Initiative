@@ -12,12 +12,16 @@ import {
 } from "lucide-react";
 import {
     Award,
+    Award2,
     BookIcon,
     CircleCheck,
     Clock,
     CodeBlock,
     Crown,
     Globe,
+    Globe2,
+    Group,
+    Hammer,
     Lightbulb,
     Network,
     Puzzle,
@@ -156,7 +160,7 @@ export const coreValues: CoreValue[] = [
         name: "Kingdom",
         description:
             "Leading with purpose, integrity, and a commitment to serving the greater good above all else.",
-        icon: Crown,
+        icon: Hammer,
         tone: "neutral",
         layout: "feature",
         gridClass: "md:row-span-2",
@@ -174,7 +178,7 @@ export const coreValues: CoreValue[] = [
         name: "Excellence",
         description:
             "Demand uncompromising quality in every line of code, design, and interaction.",
-        icon: Award,
+        icon: Award2,
         tone: "gold",
         layout: "corner",
     },
@@ -182,7 +186,7 @@ export const coreValues: CoreValue[] = [
         name: "Impact",
         description:
             "Measuring our success by the tangible, positive transformation we bring to communities.",
-        icon: Globe,
+        icon: Globe2,
         tone: "iris",
         layout: "corner",
     },
@@ -190,7 +194,7 @@ export const coreValues: CoreValue[] = [
         name: "Inclusivity",
         description:
             "Building tables where everyone has a seat. We believe true futurism is diverse, equitable, and accessible to all voices.",
-        icon: Users,
+        icon: Group,
         tone: "greige",
         layout: "banner",
         gridClass: "md:col-span-3",
