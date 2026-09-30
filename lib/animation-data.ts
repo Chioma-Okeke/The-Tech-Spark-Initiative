@@ -41,3 +41,24 @@ export const float = (distance: number, duration: number): { animate: { y: numbe
     animate: { y: [0, -distance, 0] },
     transition: { duration, ease: "easeInOut", repeat: Infinity },
 })
+// fades/scales in once on load, then drifts with a slight tilt forever.
+// opacity/scale run once; y/rotate loop and only start after the entrance ends.
+export const floatIn = (distance: number, duration: number, delay = 0, entranceDuration = 0.8) => {
+    const loop = {
+        duration,
+        delay: delay + entranceDuration,
+        ease: "easeInOut" as const,
+        repeat: Infinity,
+    }
+
+    return {
+        initial: { opacity: 0, scale: 0.85 },
+        animate: { opacity: 1, scale: 1, y: [0, -distance, 0], rotate: [0, distance / 4, 0] },
+        transition: {
+            opacity: { duration: entranceDuration, delay, ease },
+            scale: { duration: entranceDuration, delay, ease },
+            y: loop,
+            rotate: loop,
+        },
+    }
+}

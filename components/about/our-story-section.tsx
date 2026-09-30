@@ -1,4 +1,3 @@
-import { Lightbulb } from "@/icons"
 import MaxContainer from "../shared/max-container"
 import PaddingContainer from "../shared/padding-container"
 import { LogoSVG } from "../shared/logo-svg"

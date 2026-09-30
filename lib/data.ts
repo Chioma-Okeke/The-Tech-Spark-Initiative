@@ -601,7 +601,7 @@ export const sparkGlossary: SparkGlossaryEntry[] = [
         formula: "Spark = Individual Learner",
         badge: "Who is a Spark?",
         description:
-            "A Spark is a learner participating in the TVI Academy — developing practical skills, working on projects, collaborating with others and growing into a purpose-driven technology professional.",
+            "A Spark is a learner participating in the TVI Academy, developing practical skills, working on projects, collaborating with others and growing into a purpose-driven technology professional.",
         icon: Zap,
         tone: "gold",
     },
