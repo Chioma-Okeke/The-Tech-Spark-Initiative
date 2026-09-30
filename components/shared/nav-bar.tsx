@@ -126,7 +126,7 @@ const NavBar = () => {
                                     ))}
                                 </ol>
                                 <motion.div variants={panelItem}>
-                                    <Button className="mt-4 w-full rounded-full px-6 py-3 h-auto">
+                                    <Button className="mt-4 w-full rounded-full px-6 py-4 h-auto">
                                         BECOME A SPARK TODAY!
                                     </Button>
                                 </motion.div>

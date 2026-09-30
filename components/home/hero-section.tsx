@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "cn"
-import { MotionConfig, motion, type Variants } from "framer-motion"
+import { MotionConfig, motion } from "framer-motion"
 import { journeySteps } from "@/lib/data"
 import { AnimatedSection } from "../shared/animated-section"
 import MaxContainer from "../shared/max-container"
