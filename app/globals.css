@@ -123,7 +123,7 @@
 
     /* Neutrals */
     --paper: oklch(1 0 0); /* #FFFFFF  cards / crisp surfaces        */
-    --grey-100: oklch(0.96 0 0); /* #F2F2F2  soft light section            */
+    --grey-100: oklch(96.115% 0.00011 271.152); /* #F2F2F2  soft light section            */
     --grey-200: oklch(0.92 0 0); /* #EBEBEB  light border                  */
     --grey-300: oklch(0.845 0 0); /* #CDCDCD  "Core Values" / page grey band */
     --greige-100: oklch(

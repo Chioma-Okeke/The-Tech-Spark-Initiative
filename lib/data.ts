@@ -16,6 +16,7 @@ import {
     BookIcon,
     CircleCheck,
     Clock,
+    ClockBriefcase,
     CodeBlock,
     Globe,
     Globe2,
@@ -509,6 +510,7 @@ export const sparkProjects: SparkProject[] = [
         tone: "iris",
         developedBy: "Gen 4 Students",
         icon: Lightbulb,
+        image: "/people-collaborating.png",
         href: "#",
     },
     {
@@ -517,7 +519,7 @@ export const sparkProjects: SparkProject[] = [
             "A student-built application using voice AI to simulate job interviews for tech roles, providing real-time feedback on answers and tone.",
         category: "Career",
         tone: "gold",
-        icon: Clock,
+        icon: ClockBriefcase,
         href: "#",
     },
     {
