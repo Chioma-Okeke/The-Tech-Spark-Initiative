@@ -2,6 +2,7 @@ import { cn } from "cn"
 import { Check } from "lucide-react"
 import { baselineOptions } from "@/lib/data"
 import type { BaselineOption } from "@/types"
+import { AnimatedSection } from "../shared/animated-section"
 import MaxContainer from "../shared/max-container"
 import PaddingContainer from "../shared/padding-container"
 
@@ -11,8 +12,10 @@ const OptionCard = ({ option }: { option: BaselineOption }) => {
     return (
         <article
             className={cn(
-                "flex flex-col rounded-2xl p-6 sm:p-8",
-                option.highlight ? "bg-ink-950 text-white" : "bg-grey-100 text-foreground"
+                "group flex h-full flex-col rounded-2xl p-6 transition-[translate,box-shadow] duration-500 ease-out hover:-translate-y-1 hover:shadow-xl sm:p-8",
+                option.highlight
+                    ? "bg-ink-950 text-white hover:shadow-black/20"
+                    : "bg-grey-100 text-foreground hover:shadow-black/5"
             )}
         >
             <span
@@ -28,7 +31,7 @@ const OptionCard = ({ option }: { option: BaselineOption }) => {
 
             <span
                 className={cn(
-                    "mt-4 grid size-11 place-items-center rounded-xl",
+                    "mt-4 grid size-11 place-items-center rounded-xl transition-[rotate,scale] duration-500 ease-out group-hover:-rotate-6 group-hover:scale-105",
                     option.highlight ? "bg-white/10 text-gold-400" : "bg-iris-100 text-iris-600"
                 )}
             >
@@ -70,7 +73,7 @@ const BaselineSection = () => {
         <section className="bg-paper">
             <PaddingContainer className="py-16 md:py-24">
                 <MaxContainer className="space-y-10">
-                    <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+                    <AnimatedSection className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
                         <div>
                             <span className="inline-flex w-fit rounded-full bg-iris-100 px-3 py-1 text-xs font-bold uppercase tracking-widest text-iris-700">
                                 Universal Foundation
@@ -87,11 +90,13 @@ const BaselineSection = () => {
                             </span>
                             .
                         </p>
-                    </div>
+                    </AnimatedSection>
 
                     <div className="grid gap-6 lg:grid-cols-3">
-                        {baselineOptions.map((option) => (
-                            <OptionCard key={option.title} option={option} />
+                        {baselineOptions.map((option, i) => (
+                            <AnimatedSection key={option.title} delay={0.1 + i * 0.12}>
+                                <OptionCard option={option} />
+                            </AnimatedSection>
                         ))}
                     </div>
                 </MaxContainer>

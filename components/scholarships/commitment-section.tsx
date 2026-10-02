@@ -2,6 +2,7 @@ import { cn } from "cn"
 import { Check } from "lucide-react"
 import { commitmentPaths } from "@/lib/data"
 import type { CommitmentPath } from "@/types"
+import { AnimatedSection } from "../shared/animated-section"
 import MaxContainer from "../shared/max-container"
 import PaddingContainer from "../shared/padding-container"
 
@@ -14,10 +15,10 @@ const PathCard = ({ path }: { path: CommitmentPath }) => {
     const tone = toneStyles[path.tone]
 
     return (
-        <article className="rounded-3xl border border-border bg-grey-100 p-6 sm:p-8">
+        <article className="group h-full rounded-3xl border border-border bg-grey-100 p-6 transition-[translate,box-shadow] duration-500 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5 sm:p-8">
             <span
                 className={cn(
-                    "grid size-11 place-items-center rounded-xl text-sm font-bold",
+                    "grid size-11 place-items-center rounded-xl text-sm font-bold transition-[rotate,scale] duration-500 ease-out group-hover:-rotate-6 group-hover:scale-105",
                     tone.badge
                 )}
             >
@@ -44,7 +45,7 @@ const CommitmentSection = () => {
         <section className="bg-grey-100">
             <PaddingContainer className="py-16 md:py-24">
                 <MaxContainer className="space-y-10">
-                    <div className="mx-auto max-w-2xl text-center">
+                    <AnimatedSection className="mx-auto max-w-2xl text-center">
                         <span className="text-xs font-semibold uppercase tracking-[0.25em] text-iris-600">
                             Flexibility &amp; Stewardship
                         </span>
@@ -56,15 +57,17 @@ const CommitmentSection = () => {
                             their additional scholarship commitment through active service
                             projects, or through voluntary charitable support.
                         </p>
-                    </div>
+                    </AnimatedSection>
 
                     <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-2">
-                        {commitmentPaths.map((path) => (
-                            <PathCard key={path.index} path={path} />
+                        {commitmentPaths.map((path, i) => (
+                            <AnimatedSection key={path.index} delay={0.1 + i * 0.15}>
+                                <PathCard path={path} />
+                            </AnimatedSection>
                         ))}
                     </div>
 
-                    <div className="mx-auto max-w-4xl rounded-2xl border border-gold-500/40 bg-gold-100 px-6 py-5 text-center">
+                    <AnimatedSection className="mx-auto max-w-4xl rounded-2xl border border-gold-500/40 bg-gold-100 px-6 py-5 text-center">
                         <p className="text-xs font-bold uppercase tracking-widest text-gold-600 sm:text-sm">
                             Please note: charitable contributions are entirely voluntary. They
                             are not tuition fees or payment for training.
@@ -72,7 +75,7 @@ const CommitmentSection = () => {
                             TVI scholarships remain an educational access model built to
                             guarantee equity for every deserving mind.
                         </p>
-                    </div>
+                    </AnimatedSection>
                 </MaxContainer>
             </PaddingContainer>
         </section>

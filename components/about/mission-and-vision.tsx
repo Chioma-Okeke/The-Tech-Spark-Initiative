@@ -4,14 +4,13 @@ import { missionAndVision } from "@/lib/data"
 import MaxContainer from "../shared/max-container"
 import PaddingContainer from "../shared/padding-container"
 import { cn } from "cn"
-import { MotionConfig, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { AnimatedSection } from "../shared/animated-section"
 
 const ease = [0.22, 1, 0.36, 1] as const
 
 const MissionAndVision = () => {
     return (
-        <MotionConfig reducedMotion="user">
             <section className="relative overflow-hidden bg-[#101120] py-20 md:py-16 lg:py-28">
                 <svg
                     aria-hidden
@@ -69,7 +68,6 @@ const MissionAndVision = () => {
                     </MaxContainer>
                 </PaddingContainer>
             </section>
-        </MotionConfig>
     )
 }
 

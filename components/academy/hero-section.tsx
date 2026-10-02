@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { cn } from "cn"
-import { MotionConfig, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { ArrowRight } from "@/icons"
 import { drawLine, ease, fadeUp, floatIn, heroCopy } from "@/lib/animation-data"
 import MaxContainer from "../shared/max-container"
@@ -17,7 +17,6 @@ const lines = [
 
 const AcademyHeroSection = () => {
     return (
-        <MotionConfig reducedMotion="user">
             <section className="dark relative overflow-hidden bg-ink-900 text-foreground">
                 {/* decorative diagonal lines */}
                 <motion.svg
@@ -111,7 +110,6 @@ const AcademyHeroSection = () => {
                     </MaxContainer>
                 </PaddingContainer>
             </section>
-        </MotionConfig>
     )
 }
 

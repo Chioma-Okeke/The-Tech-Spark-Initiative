@@ -1,6 +1,9 @@
 "use client"
 
 import { FormEvent, useState } from "react"
+import { motion, type Variants } from "framer-motion"
+import { ease } from "@/lib/animation-data"
+import { AnimatedSection } from "../shared/animated-section"
 import MaxContainer from "../shared/max-container"
 import PaddingContainer from "../shared/padding-container"
 import { Button } from "../ui/button"
@@ -24,6 +27,17 @@ const areasOfInterest = [
     { value: "other", label: "Other" },
 ]
 
+// once the card has risen in, its fields follow one row at a time
+const formRows: Variants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.08, delayChildren: 0.3 } },
+}
+
+const formRow: Variants = {
+    hidden: { opacity: 0, y: 12 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
+}
+
 const InquiriesSection = () => {
     const [contactInfo, setContactInfo] = useState({
         firstName: "",
@@ -41,7 +55,7 @@ const InquiriesSection = () => {
         <section className="bg-ink-950">
             <PaddingContainer className="py-16 md:py-24">
                 <MaxContainer className="mx-auto max-w-2xl">
-                    <div className="rounded-3xl bg-grey-100 p-8 sm:p-10">
+                    <AnimatedSection className="rounded-3xl bg-grey-100 p-8 sm:p-10">
                         <div className="space-y-2 text-center">
                             <h2 className="text-3xl font-bold text-foreground">
                                 General Inquiries
@@ -52,8 +66,15 @@ const InquiriesSection = () => {
                             </p>
                         </div>
 
-                        <form onSubmit={handleSubmit} className="mt-8 space-y-5">
-                            <div className="grid gap-5 sm:grid-cols-2">
+                        <motion.form
+                            onSubmit={handleSubmit}
+                            variants={formRows}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.3 }}
+                            className="mt-8 space-y-5"
+                        >
+                            <motion.div variants={formRow} className="grid gap-5 sm:grid-cols-2">
                                 <div className="space-y-2">
                                     <Label htmlFor="firstName">First Name</Label>
                                     <Input
@@ -88,9 +109,9 @@ const InquiriesSection = () => {
                                         required
                                     />
                                 </div>
-                            </div>
+                            </motion.div>
 
-                            <div className="space-y-2">
+                            <motion.div variants={formRow} className="space-y-2">
                                 <Label htmlFor="emailAddress">Email</Label>
                                 <Input
                                     type="email"
@@ -106,9 +127,9 @@ const InquiriesSection = () => {
                                     }
                                     required
                                 />
-                            </div>
+                            </motion.div>
 
-                            <div className="space-y-2">
+                            <motion.div variants={formRow} className="space-y-2">
                                 <Label htmlFor="areaOfInterest">Area of Interest</Label>
                                 <Select
                                     value={contactInfo.areaOfInterest}
@@ -130,9 +151,9 @@ const InquiriesSection = () => {
                                         ))}
                                     </SelectContent>
                                 </Select>
-                            </div>
+                            </motion.div>
 
-                            <div className="space-y-2">
+                            <motion.div variants={formRow} className="space-y-2">
                                 <Label htmlFor="message">Message</Label>
                                 <Textarea
                                     id="message"
@@ -147,16 +168,18 @@ const InquiriesSection = () => {
                                     }
                                     required
                                 />
-                            </div>
+                            </motion.div>
 
-                            <Button
-                                type="submit"
-                                className="h-auto w-full rounded-lg py-3 text-sm font-bold"
-                            >
-                                Send Message
-                            </Button>
-                        </form>
-                    </div>
+                            <motion.div variants={formRow}>
+                                <Button
+                                    type="submit"
+                                    className="h-auto w-full rounded-lg py-3 text-sm font-bold"
+                                >
+                                    Send Message
+                                </Button>
+                            </motion.div>
+                        </motion.form>
+                    </AnimatedSection>
                 </MaxContainer>
             </PaddingContainer>
         </section>

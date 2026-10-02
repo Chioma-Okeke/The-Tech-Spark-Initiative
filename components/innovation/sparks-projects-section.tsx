@@ -4,6 +4,7 @@ import { cn } from "cn"
 import { ArrowRight } from "@/icons"
 import { sparkProjects } from "@/lib/data"
 import type { SparkProject } from "@/types"
+import { AnimatedSection } from "../shared/animated-section"
 import MaxContainer from "../shared/max-container"
 import PaddingContainer from "../shared/padding-container"
 import { buttonVariants } from "../ui/button"
@@ -19,18 +20,19 @@ const ProjectCard = ({ project }: { project: SparkProject }) => {
     const Icon = project.icon
 
     return (
-        <article className="flex flex-col overflow-hidden rounded-3xl bg-paper">
+        <article className="group flex h-full flex-col overflow-hidden rounded-3xl bg-paper transition-[translate,box-shadow] duration-500 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20">
             <div className="relative h-40 shrink-0 overflow-hidden bg-grey-100 sm:h-44">
+                {/* image / tile zooms in slowly on hover */}
                 {project.image ? (
                     <Image
                         src={project.image}
                         alt=""
                         fill
-                        className="object-cover"
+                        className="object-cover transition-[scale] duration-700 ease-out group-hover:scale-105"
                     />
                 ) : (
                     <div className={cn("flex h-full items-center justify-center", tone.tile)}>
-                        <Icon className="size-10" />
+                        <Icon className="size-10 transition-[scale] duration-700 ease-out group-hover:scale-110" />
                     </div>
                 )}
             </div>
@@ -63,7 +65,7 @@ const ProjectCard = ({ project }: { project: SparkProject }) => {
                     className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-foreground"
                 >
                     Explore Workflow
-                    <ArrowRight className="size-4" />
+                    <ArrowRight className="size-4 transition-transform duration-300 ease-out group-hover:translate-x-1" />
                 </Link>
             </div>
         </article>
@@ -90,41 +92,48 @@ const SparksProjectsSection = () => {
 
             <PaddingContainer className="relative py-16 md:py-24">
                 <MaxContainer className="space-y-10">
-                    <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-                        Sparks projects
-                    </h2>
+                    <AnimatedSection>
+                        <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+                            Sparks projects
+                        </h2>
+                    </AnimatedSection>
 
                     <div className="grid gap-6 md:grid-cols-2">
-                        {sparkProjects.map((project) => (
-                            <ProjectCard key={project.title} project={project} />
+                        {sparkProjects.map((project, i) => (
+                            <AnimatedSection key={project.title} delay={0.1 + (i % 2) * 0.15}>
+                                <ProjectCard project={project} />
+                            </AnimatedSection>
                         ))}
 
-                        <div className="relative flex flex-col justify-center overflow-hidden rounded-3xl bg-ink-900 p-8 sm:p-10">
-                            <div
-                                aria-hidden
-                                className="pointer-events-none absolute -bottom-16 -right-16 size-56 rounded-full bg-gold-500/15 blur-3xl"
-                            />
-                            <div className="relative">
-                                <h3 className="text-2xl font-bold text-white sm:text-3xl">
-                                    Make Your Skills Work Harder.
-                                </h3>
-                                <p className="mt-4 text-sm leading-relaxed text-white/70 sm:text-base">
-                                    The future belongs to those who can adapt. We teach you not
-                                    just how to use AI, but how to think alongside it, critically
-                                    evaluating outputs and integrating it seamlessly into your
-                                    professional toolkit.
-                                </p>
-                                <Link
-                                    href="/academy"
-                                    className={cn(
-                                        buttonVariants(),
-                                        "mt-6 h-auto w-fit rounded-lg px-6 py-3 text-sm font-bold"
-                                    )}
-                                >
-                                    Join our next AI Gen
-                                </Link>
+                        <AnimatedSection delay={0.1 + (sparkProjects.length % 2) * 0.15}>
+                            <div className="group relative flex h-full flex-col justify-center overflow-hidden rounded-3xl bg-ink-900 p-8 sm:p-10">
+                                {/* glow swells gently on hover */}
+                                <div
+                                    aria-hidden
+                                    className="pointer-events-none absolute -bottom-16 -right-16 size-56 rounded-full bg-gold-500/15 blur-3xl transition-[scale,opacity] duration-700 ease-out group-hover:scale-125 group-hover:opacity-80"
+                                />
+                                <div className="relative">
+                                    <h3 className="text-2xl font-bold text-white sm:text-3xl">
+                                        Make Your Skills Work Harder.
+                                    </h3>
+                                    <p className="mt-4 text-sm leading-relaxed text-white/70 sm:text-base">
+                                        The future belongs to those who can adapt. We teach you not
+                                        just how to use AI, but how to think alongside it, critically
+                                        evaluating outputs and integrating it seamlessly into your
+                                        professional toolkit.
+                                    </p>
+                                    <Link
+                                        href="/academy"
+                                        className={cn(
+                                            buttonVariants(),
+                                            "mt-6 h-auto w-fit rounded-lg px-6 py-3 text-sm font-bold"
+                                        )}
+                                    >
+                                        Join our next AI Gen
+                                    </Link>
+                                </div>
                             </div>
-                        </div>
+                        </AnimatedSection>
                     </div>
                 </MaxContainer>
             </PaddingContainer>

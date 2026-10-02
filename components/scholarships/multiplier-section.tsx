@@ -1,6 +1,7 @@
 import { cn } from "cn"
 import { multiplierSteps } from "@/lib/data"
 import { Button } from "../ui/button"
+import { AnimatedSection } from "../shared/animated-section"
 import MaxContainer from "../shared/max-container"
 import PaddingContainer from "../shared/padding-container"
 
@@ -15,7 +16,7 @@ const MultiplierSection = () => {
             <PaddingContainer className="relative py-16 md:py-24">
                 <MaxContainer className="space-y-16">
                     <div className="space-y-10 text-center">
-                        <div className="mx-auto max-w-2xl">
+                        <AnimatedSection className="mx-auto max-w-2xl">
                             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-400">
                                 The Multiplier Effect
                             </span>
@@ -26,47 +27,51 @@ const MultiplierSection = () => {
                                 Every Spark empowered creates a ripple effect across families,
                                 startups, and open-source ecosystems.
                             </p>
-                        </div>
+                        </AnimatedSection>
 
+                        {/* the ripple: steps cascade in quickly, one after another */}
                         <div className="mx-auto grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-                            {multiplierSteps.map((step) => (
-                                <div
-                                    key={step.index}
-                                    className={cn(
-                                        "rounded-xl border p-4 text-center",
-                                        step.highlight
-                                            ? "border-gold-500/40 bg-iris-950"
-                                            : "border-white/10 bg-ink-900"
-                                    )}
-                                >
-                                    <p
+                            {multiplierSteps.map((step, i) => (
+                                <AnimatedSection key={step.index} delay={0.1 + i * 0.08}>
+                                    <div
                                         className={cn(
-                                            "font-mono text-[0.65rem]",
-                                            step.highlight ? "text-gold-400" : "text-muted-foreground"
+                                            "h-full rounded-xl border p-4 text-center transition-[translate,border-color] duration-500 ease-out hover:-translate-y-0.5",
+                                            step.highlight
+                                                ? "border-gold-500/40 bg-iris-950 hover:border-gold-500/70"
+                                                : "border-white/10 bg-ink-900 hover:border-white/25"
                                         )}
                                     >
-                                        {step.index}
-                                    </p>
-                                    <p
-                                        className={cn(
-                                            "mt-1 text-sm font-bold",
-                                            step.highlight ? "text-gold-400" : "text-foreground"
-                                        )}
-                                    >
-                                        {step.label}
-                                    </p>
-                                </div>
+                                        <p
+                                            className={cn(
+                                                "font-mono text-[0.65rem]",
+                                                step.highlight ? "text-gold-400" : "text-muted-foreground"
+                                            )}
+                                        >
+                                            {step.index}
+                                        </p>
+                                        <p
+                                            className={cn(
+                                                "mt-1 text-sm font-bold",
+                                                step.highlight ? "text-gold-400" : "text-foreground"
+                                            )}
+                                        >
+                                            {step.label}
+                                        </p>
+                                    </div>
+                                </AnimatedSection>
                             ))}
                         </div>
 
-                        <p className="mx-auto max-w-2xl text-sm italic leading-relaxed text-muted-foreground sm:text-base">
-                            &ldquo;Talent is evenly distributed across our continent; opportunity
-                            is not. When we turn our learning into service, we bridge the gap
-                            forever.&rdquo;
-                        </p>
+                        <AnimatedSection delay={0.2}>
+                            <p className="mx-auto max-w-2xl text-sm italic leading-relaxed text-muted-foreground sm:text-base">
+                                &ldquo;Talent is evenly distributed across our continent; opportunity
+                                is not. When we turn our learning into service, we bridge the gap
+                                forever.&rdquo;
+                            </p>
+                        </AnimatedSection>
                     </div>
 
-                    <div className="space-y-6 text-center">
+                    <AnimatedSection className="space-y-6 text-center">
                         <h3 className="text-3xl font-extrabold sm:text-5xl">
                             Ready to Choose Your Path?
                         </h3>
@@ -85,7 +90,7 @@ const MultiplierSection = () => {
                                 View Programmes
                             </Button>
                         </div>
-                    </div>
+                    </AnimatedSection>
                 </MaxContainer>
             </PaddingContainer>
         </section>

@@ -4,9 +4,13 @@ import { cn } from "cn"
 import { ArrowRight } from "@/icons"
 import { involvementOptions } from "@/lib/data"
 import type { InvolvementOption } from "@/types"
+import { AnimatedSection } from "../shared/animated-section"
 import MaxContainer from "../shared/max-container"
 import PaddingContainer from "../shared/padding-container"
 import { buttonVariants } from "../ui/button"
+
+// shared hover: a gentle lift; each layout adds its own detail on top
+const cardHover = "group h-full transition-[translate] duration-500 ease-out hover:-translate-y-1"
 
 const OptionCard = ({ option }: { option: InvolvementOption }) => {
     const Icon = option.icon
@@ -16,14 +20,14 @@ const OptionCard = ({ option }: { option: InvolvementOption }) => {
             <article
                 className={cn(
                     "relative flex min-h-80 flex-col justify-end overflow-hidden rounded-3xl",
-                    option.gridClass
+                    cardHover
                 )}
             >
                 <Image
                     src="/futuristic-woman.png"
                     alt=""
                     fill
-                    className="object-cover object-top"
+                    className="object-cover object-top transition-[scale] duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-ink-950 via-ink-950/60 to-ink-950/10" />
                 <div className="relative p-6 sm:p-8">
@@ -37,7 +41,7 @@ const OptionCard = ({ option }: { option: InvolvementOption }) => {
                         className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-white"
                     >
                         {option.ctaLabel}
-                        <ArrowRight className="size-4" />
+                        <ArrowRight className="size-4 transition-transform duration-300 ease-out group-hover:translate-x-1" />
                     </Link>
                 </div>
             </article>
@@ -49,10 +53,10 @@ const OptionCard = ({ option }: { option: InvolvementOption }) => {
             <article
                 className={cn(
                     "relative flex min-h-80 flex-col justify-between overflow-hidden rounded-3xl bg-ink-700 p-6 sm:p-8",
-                    option.gridClass
+                    cardHover
                 )}
             >
-                <span className="ml-auto grid size-11 place-items-center rounded-full border border-white/25 text-white/80">
+                <span className="ml-auto grid size-11 place-items-center rounded-full border border-white/25 text-white/80 transition-[rotate,border-color] duration-500 ease-out group-hover:rotate-12 group-hover:border-white/50">
                     <Icon className="size-5" />
                 </span>
                 <div>
@@ -78,8 +82,8 @@ const OptionCard = ({ option }: { option: InvolvementOption }) => {
     return (
         <article
             className={cn(
-                "flex flex-col rounded-3xl bg-ink-850 p-6 sm:p-8",
-                option.gridClass
+                "flex flex-col rounded-3xl border border-transparent bg-ink-850 p-6 transition-colors sm:p-8 hover:border-white/10",
+                cardHover
             )}
         >
             <h3 className="inline-flex items-center gap-2 text-xl font-bold text-white">
@@ -94,7 +98,7 @@ const OptionCard = ({ option }: { option: InvolvementOption }) => {
                 className="mt-6 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-primary"
             >
                 {option.ctaLabel}
-                <ArrowRight className="size-3.5" />
+                <ArrowRight className="size-3.5 transition-transform duration-300 ease-out group-hover:translate-x-1" />
             </Link>
         </article>
     )
@@ -105,8 +109,14 @@ const InvolvementSection = () => {
         <section className="dark bg-ink-900 text-foreground">
             <PaddingContainer className="py-16 md:py-24">
                 <MaxContainer className="grid gap-6 md:grid-cols-3">
-                    {involvementOptions.map((option) => (
-                        <OptionCard key={option.name} option={option} />
+                    {involvementOptions.map((option, i) => (
+                        <AnimatedSection
+                            key={option.name}
+                            delay={i * 0.1}
+                            className={option.gridClass}
+                        >
+                            <OptionCard option={option} />
+                        </AnimatedSection>
                     ))}
                 </MaxContainer>
             </PaddingContainer>

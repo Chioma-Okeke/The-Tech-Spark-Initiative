@@ -1,20 +1,35 @@
 'use client'
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import React from "react";
+import { HTMLMotionProps, motion, type Variants } from "framer-motion";
 
-export const AnimatedSection = ({ children, className, delay = 0, ...props }: { children: React.ReactNode, className?: string, delay?: number }) => {
-    const { ref, inView } = useInView({
-        triggerOnce: true,
-        threshold: 0.08,
-    });
+type AnimatedSectionProps = HTMLMotionProps<"div"> & {
+    delay?: number
+}
 
+const defaultVariants: Variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 }
+}
+
+export const AnimatedSection = ({
+    children,
+    className,
+    delay = 0,
+    variants = defaultVariants,
+    transition,
+    viewport,
+    ...props
+}: AnimatedSectionProps) => {
     return (
         <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.9, ease: "easeOut", delay }}
+            whileInView="visible"
+            initial="hidden"
+            viewport={{
+                once: true,
+                amount: "some",
+                ...viewport
+            }}
+            variants={variants}
+            transition={{ duration: 0.9, ease: "easeOut", delay, ...transition }}
             className={className}
             {...props}
         >

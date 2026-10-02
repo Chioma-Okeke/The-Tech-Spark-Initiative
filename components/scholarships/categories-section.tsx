@@ -2,6 +2,7 @@ import { cn } from "cn"
 import { ChevronDown } from "lucide-react"
 import { impactCategories } from "@/lib/data"
 import type { ImpactCategory } from "@/types"
+import { AnimatedSection } from "../shared/animated-section"
 import MaxContainer from "../shared/max-container"
 import PaddingContainer from "../shared/padding-container"
 
@@ -14,7 +15,7 @@ const CategoryCard = ({ category }: { category: ImpactCategory }) => {
     const tone = toneStyles[category.tone]
 
     return (
-        <article className="flex flex-col rounded-2xl border border-border bg-paper p-6 sm:p-8">
+        <article className="group flex h-full flex-col rounded-2xl border border-border bg-paper p-6 transition-[translate,box-shadow,border-color] duration-500 ease-out hover:-translate-y-1 hover:border-iris-300 hover:shadow-xl hover:shadow-black/5 sm:p-8">
             <div className="flex items-start justify-between gap-3">
                 <span
                     className={cn(
@@ -42,7 +43,7 @@ const CategoryCard = ({ category }: { category: ImpactCategory }) => {
                 className="inline-flex items-center gap-1.5 text-sm font-bold text-iris-700"
             >
                 View Approved Projects
-                <ChevronDown className="size-4" />
+                <ChevronDown className="size-4 transition-transform duration-300 ease-out group-hover:translate-y-0.5" />
             </a>
         </article>
     )
@@ -53,7 +54,7 @@ const CategoriesSection = () => {
         <section className="bg-grey-100">
             <PaddingContainer className="py-16 md:py-24">
                 <MaxContainer className="space-y-10">
-                    <div className="mx-auto max-w-2xl text-center">
+                    <AnimatedSection className="mx-auto max-w-2xl text-center">
                         <span className="text-xs font-semibold uppercase tracking-[0.25em] text-iris-600">
                             Impact Disciplines
                         </span>
@@ -65,11 +66,14 @@ const CategoriesSection = () => {
                             something that serves the next Spark. Pick the track that fits your
                             skills.
                         </p>
-                    </div>
+                    </AnimatedSection>
 
                     <div className="grid gap-6 md:grid-cols-3">
-                        {impactCategories.map((category) => (
-                            <CategoryCard key={category.badge} category={category} />
+                        {/* stagger restarts on each row of three so lower rows don't lag */}
+                        {impactCategories.map((category, i) => (
+                            <AnimatedSection key={category.badge} delay={0.1 + (i % 3) * 0.12}>
+                                <CategoryCard category={category} />
+                            </AnimatedSection>
                         ))}
                     </div>
                 </MaxContainer>
