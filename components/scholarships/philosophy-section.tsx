@@ -1,8 +1,14 @@
+"use client"
+
 import { cn } from "cn"
 import { scholarshipTiers } from "@/lib/data"
 import { AnimatedSection } from "../shared/animated-section"
 import MaxContainer from "../shared/max-container"
 import PaddingContainer from "../shared/padding-container"
+import { motion } from "framer-motion"
+import { ease } from "@/lib/animation-data"
+
+const lineDuration = 1.2
 
 const PhilosophySection = () => {
     return (
@@ -23,11 +29,19 @@ const PhilosophySection = () => {
                         </p>
                     </AnimatedSection>
 
-                    <div className="relative mx-auto grid max-w-5xl gap-4 sm:grid-cols-5">
-                        <div className="pointer-events-none absolute inset-x-6 top-14 hidden h-px bg-border sm:block" />
-                        {/* tiers climb in from 20% upward */}
-                        {scholarshipTiers.map((tier, i) => (
-                            <AnimatedSection key={tier.percent} delay={0.1 + i * 0.1}>
+                    <AnimatedSection className="relative mx-auto grid max-w-5xl gap-4 sm:grid-cols-5">
+                        <motion.div
+                            variants={{
+                                hidden: { clipPath: "inset(0% 100% 100% 0%)" },
+                                visible: {
+                                    clipPath: "inset(0% 0% 0% 0%)",
+                                    transition: { duration: lineDuration, ease, delay: 0.8 },
+                                },
+                            }}
+                            className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-full max-md:w-2 bg-linear-to-b sm:h-2 sm:w-full sm:bg-linear-to-r from-iris-500 via-iris-500/80 to-gold-500"
+                        />
+                        {scholarshipTiers.map((tier) => (
+                            <div key={tier.percent} >
                                 <div
                                     className={cn(
                                         "group relative flex h-full flex-col items-center rounded-2xl border p-5 text-center transition-[translate,box-shadow] duration-500 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5",
@@ -63,9 +77,9 @@ const PhilosophySection = () => {
                                         {tier.description}
                                     </p>
                                 </div>
-                            </AnimatedSection>
+                            </div>
                         ))}
-                    </div>
+                    </AnimatedSection>
                 </MaxContainer>
             </PaddingContainer>
         </section>

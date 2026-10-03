@@ -15,7 +15,7 @@ const PathCard = ({ path }: { path: CommitmentPath }) => {
     const tone = toneStyles[path.tone]
 
     return (
-        <article className="group h-full rounded-3xl border border-border bg-grey-100 p-6 transition-[translate,box-shadow] duration-500 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5 sm:p-8">
+        <article className="group h-full rounded-3xl border border-[#E2E8F0]/80 bg-[#F8FAFC] p-6 transition-[translate,box-shadow] duration-500 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5 sm:p-8">
             <span
                 className={cn(
                     "grid size-11 place-items-center rounded-xl text-sm font-bold transition-[rotate,scale] duration-500 ease-out group-hover:-rotate-6 group-hover:scale-105",
@@ -24,7 +24,7 @@ const PathCard = ({ path }: { path: CommitmentPath }) => {
             >
                 {path.index}
             </span>
-            <h3 className="mt-5 text-xl font-bold text-foreground">{path.title}</h3>
+            <h3 className="mt-5 text-xl lg:text-2xl font-bold text-foreground">{path.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {path.description}
             </p>
@@ -42,7 +42,7 @@ const PathCard = ({ path }: { path: CommitmentPath }) => {
 
 const CommitmentSection = () => {
     return (
-        <section className="bg-grey-100">
+        <section className="bg-paper">
             <PaddingContainer className="py-16 md:py-24">
                 <MaxContainer className="space-y-10">
                     <AnimatedSection className="mx-auto max-w-2xl text-center">
@@ -59,7 +59,7 @@ const CommitmentSection = () => {
                         </p>
                     </AnimatedSection>
 
-                    <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-2">
+                    <div className="mx-auto grid  gap-6 sm:grid-cols-2">
                         {commitmentPaths.map((path, i) => (
                             <AnimatedSection key={path.index} delay={0.1 + i * 0.15}>
                                 <PathCard path={path} />
@@ -67,8 +67,8 @@ const CommitmentSection = () => {
                         ))}
                     </div>
 
-                    <AnimatedSection className="mx-auto max-w-4xl rounded-2xl border border-gold-500/40 bg-gold-100 px-6 py-5 text-center">
-                        <p className="text-xs font-bold uppercase tracking-widest text-gold-600 sm:text-sm">
+                    <AnimatedSection className="mx-auto max-w-5xl rounded-2xl border border-gold-500/40 bg-gold-100 px-6 py-5 text-center">
+                            <p className="text-xs font-bold uppercase tracking-widest text-[#78350F]">
                             Please note: charitable contributions are entirely voluntary. They
                             are not tuition fees or payment for training.
                             <br className="hidden sm:block" />

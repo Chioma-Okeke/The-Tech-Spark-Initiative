@@ -100,6 +100,7 @@ export type BaselineOption = {
     icon: IconComponent
     /** dark, gold-badge treatment for the mandatory capstone */
     highlight?: boolean
+    goldBg?: boolean
 }
 
 export type CommitmentPath = {

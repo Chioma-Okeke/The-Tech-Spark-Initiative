@@ -37,7 +37,7 @@ const NavBar = () => {
     return (
         <section className="bg-[#F8FAFC] ">
             <PaddingContainer className="py-4 max-lg:px-0">
-                <MaxContainer className="relative">
+                <MaxContainer className="relative max-sm:px-2">
                     <div className="flex items-center justify-between gap-4">
                         <div className="shrink-0">
                             <LogoSVG />
@@ -79,7 +79,6 @@ const NavBar = () => {
                             onClick={() => setOpen((prev) => !prev)}
                             className="inline-flex items-center justify-center rounded-md p-2 text-foreground transition-colors hover:bg-black/5 lg:hidden"
                         >
-                            {/* icons cross-fade with a small turn as the menu toggles */}
                             <AnimatePresence mode="wait" initial={false}>
                                 <motion.span
                                     key={open ? "close" : "open"}
@@ -95,7 +94,6 @@ const NavBar = () => {
                         </button>
                     </div>
 
-                    {/* Mobile nav panel */}
                     <AnimatePresence>
                         {open && (
                             <motion.nav
@@ -104,7 +102,7 @@ const NavBar = () => {
                                 initial="hidden"
                                 animate="visible"
                                 exit="exit"
-                                className="mt-4 border-t border-ink-muted/20 p-4 lg:hidden absolute bg-[#F8FAFC] z-50 w-full origin-top shadow-lg shadow-black/5"
+                                className="mt-4 border-t border-ink-muted/20 p-4 lg:hidden absolute inset-x-0 bg-[#F8FAFC] z-50 origin-top shadow-lg shadow-black/5"
                             >
                                 <ol className="flex flex-col gap-1">
                                     {navItems.map((item) => (
@@ -113,7 +111,7 @@ const NavBar = () => {
                                                 href={item.link}
                                                 onClick={() => setOpen(false)}
                                                 className={cn(
-                                                    "block rounded-md px-3 py-2 text-ink-muted transition-colors hover:bg-black/5 hover:text-foreground",
+                                                    "block rounded-md p-3 text-ink-muted transition-colors hover:bg-black/5 hover:text-foreground",
                                                     {
                                                         "bg-black/5 font-bold text-foreground":
                                                             pathname === item.link,

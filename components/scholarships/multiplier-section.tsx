@@ -71,7 +71,7 @@ const MultiplierSection = () => {
                         </AnimatedSection>
                     </div>
 
-                    <AnimatedSection className="space-y-6 text-center">
+                    <AnimatedSection className="space-y-6 py-10 text-center">
                         <h3 className="text-3xl font-extrabold sm:text-5xl">
                             Ready to Choose Your Path?
                         </h3>

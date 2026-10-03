@@ -40,7 +40,7 @@ const CategoryCard = ({ category }: { category: ImpactCategory }) => {
 
             <a
                 href={category.href}
-                className="inline-flex items-center gap-1.5 text-sm font-bold text-iris-700"
+                className="inline-flex justify-between items-center gap-1.5 text-sm font-bold text-iris-700"
             >
                 View Approved Projects
                 <ChevronDown className="size-4 transition-transform duration-300 ease-out group-hover:translate-y-0.5" />
@@ -69,7 +69,6 @@ const CategoriesSection = () => {
                     </AnimatedSection>
 
                     <div className="grid gap-6 md:grid-cols-3">
-                        {/* stagger restarts on each row of three so lower rows don't lag */}
                         {impactCategories.map((category, i) => (
                             <AnimatedSection key={category.badge} delay={0.1 + (i % 3) * 0.12}>
                                 <CategoryCard category={category} />

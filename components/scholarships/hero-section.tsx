@@ -6,6 +6,7 @@ import { drawLine, ease, fadeUp, floatIn, heroCopy } from "@/lib/animation-data"
 import { scholarshipStats } from "@/lib/data"
 import MaxContainer from "../shared/max-container"
 import PaddingContainer from "../shared/padding-container"
+import Image from "next/image"
 
 // the figure appears, the connector path draws out from them,
 // and the floating nodes pop in along it one by one
@@ -88,25 +89,25 @@ const ScholarshipsHeroSection = () => {
                 preserveAspectRatio="none"
                 initial="hidden"
                 animate="visible"
-                className="pointer-events-none absolute inset-0 hidden h-full w-full text-aqua-400/40 lg:block"
+                className="pointer-events-none absolute inset-0 hidden h-full w-full text-aqua-400/80 lg:block"
             >
                 <motion.line x1="-4%" y1="4%" x2="18%" y2="24%" stroke="currentColor" strokeWidth="1" custom={0} variants={drawLine} />
-                <motion.line x1="86%" y1="60%" x2="104%" y2="100%" stroke="currentColor" strokeWidth="1" custom={1} variants={drawLine} />
+                <motion.line x1="104%" y1="60%" x2="86%" y2="100%" stroke="currentColor" strokeWidth="1" custom={1} variants={drawLine} />
             </motion.svg>
 
             {/* corner blobs */}
             <motion.div
                 {...floatIn(12, 6.5, 0.6)}
-                className="pointer-events-none absolute bottom-16 left-[62%] hidden size-32 rounded-[44px] bg-iris-500/25 sm:block"
+                className="pointer-events-none absolute bottom-40 right-[5%] hidden size-32 rounded-[44px] bg-iris-500/25 sm:block"
             />
             <motion.div
                 {...floatIn(10, 8, 0.8)}
-                className="pointer-events-none absolute bottom-24 left-[52%] hidden size-24 rounded-full bg-gold-500/25 sm:block"
+                className="pointer-events-none absolute bottom-28 right-[14%] hidden size-25 rounded-[44px] bg-gold-500/25 sm:block"
             />
 
             <PaddingContainer className="relative py-16 md:py-24 lg:py-28">
-                <MaxContainer className="grid items-center gap-12 lg:grid-cols-2">
-                    <motion.div variants={heroCopy} initial="hidden" animate="visible">
+                <MaxContainer className="grid items-center gap-12 lg:grid-cols-3">
+                    <motion.div variants={heroCopy} initial="hidden" animate="visible" className="lg:col-span-2">
                         <h1 className="text-4xl font-extrabold uppercase leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
                             <motion.span variants={fadeUp} className="block text-primary">
                                 Your Scholarship
@@ -120,7 +121,7 @@ const ScholarshipsHeroSection = () => {
                             className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base"
                         >
                             Every Spark starts with an opportunity. Choose the scholarship
-                            pathway that works for you — and turn that opportunity into
+                            pathway that works for you, and turn that opportunity into
                             catalytic impact for our community.
                         </motion.p>
 
@@ -152,8 +153,8 @@ const ScholarshipsHeroSection = () => {
                         </motion.div>
                     </motion.div>
 
-                    <div className="relative z-10 hidden lg:block">
-                        <ScholarIllustration />
+                    <div className="relative w-100.25 h-100.25 overflow-hidden z-10 hidden lg:block col-span-1">
+                        <Image src="/woman-and-papers-illustration.png" fill alt="hero-section-illustration" className="object-center object-cover"/>
                     </div>
                 </MaxContainer>
             </PaddingContainer>

@@ -387,6 +387,7 @@ export const baselineOptions: BaselineOption[] = [
             "Concrete code snippets & technical breakdowns",
         ],
         icon: Share2,
+        goldBg: true
     },
     {
         eyebrow: "MANDATORY FOR ALL",

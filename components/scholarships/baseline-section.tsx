@@ -12,10 +12,10 @@ const OptionCard = ({ option }: { option: BaselineOption }) => {
     return (
         <article
             className={cn(
-                "group flex h-full flex-col rounded-2xl p-6 transition-[translate,box-shadow] duration-500 ease-out hover:-translate-y-1 hover:shadow-xl sm:p-8",
+                "group flex h-full flex-col justify-between rounded-2xl p-6 transition-[translate,box-shadow] duration-500 ease-out hover:-translate-y-1 hover:shadow-xl sm:p-8",
                 option.highlight
-                    ? "bg-ink-950 text-white hover:shadow-black/20"
-                    : "bg-grey-100 text-foreground hover:shadow-black/5"
+                    ? "bg-[#20315A] border border-[#20315A] text-white hover:shadow-black/20"
+                    : "bg-[#F8FAFC] border border-[#E2E8F0]/80 text-foreground hover:shadow-black/5"
             )}
         >
             <span
@@ -32,13 +32,15 @@ const OptionCard = ({ option }: { option: BaselineOption }) => {
             <span
                 className={cn(
                     "mt-4 grid size-11 place-items-center rounded-xl transition-[rotate,scale] duration-500 ease-out group-hover:-rotate-6 group-hover:scale-105",
-                    option.highlight ? "bg-white/10 text-gold-400" : "bg-iris-100 text-iris-600"
+                    option.highlight ? "bg-white/10 text-gold-400" : "bg-iris-100 text-iris-600", {
+                        "bg-[#FEF3C7] text-primary": option.goldBg
+                    }
                 )}
             >
                 <Icon className="size-5" />
             </span>
 
-            <h3 className="mt-4 text-lg font-bold">{option.title}</h3>
+            <h3 className="mt-4 text-lg md:text-xl font-bold">{option.title}</h3>
             <p
                 className={cn(
                     "mt-3 text-sm leading-relaxed",
@@ -59,7 +61,7 @@ const OptionCard = ({ option }: { option: BaselineOption }) => {
                             option.highlight ? "text-white/80" : "text-muted-foreground"
                         )}
                     >
-                        <Check className="mt-0.5 size-4 shrink-0 text-primary" />
+                        <Check className="mt-0.5 size-4 shrink-0" />
                         {item}
                     </li>
                 ))}
@@ -72,13 +74,13 @@ const BaselineSection = () => {
     return (
         <section className="bg-paper">
             <PaddingContainer className="py-16 md:py-24">
-                <MaxContainer className="space-y-10">
+                <MaxContainer className="space-y-10 md:space-y-16">
                     <AnimatedSection className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
                         <div>
                             <span className="inline-flex w-fit rounded-full bg-iris-100 px-3 py-1 text-xs font-bold uppercase tracking-widest text-iris-700">
                                 Universal Foundation
                             </span>
-                            <h2 className="mt-4 max-w-lg text-3xl font-extrabold text-foreground sm:text-4xl">
+                            <h2 className="mt-4  text-3xl font-extrabold text-foreground sm:text-4xl">
                                 The Baseline: Every Spark Starts Here
                             </h2>
                         </div>

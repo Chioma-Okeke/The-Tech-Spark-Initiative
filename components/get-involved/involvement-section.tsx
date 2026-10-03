@@ -38,7 +38,7 @@ const OptionCard = ({ option }: { option: InvolvementOption }) => {
                     </p>
                     <Link
                         href={option.href}
-                        className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-white"
+                        className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#B5C5F7]"
                     >
                         {option.ctaLabel}
                         <ArrowRight className="size-4 transition-transform duration-300 ease-out group-hover:translate-x-1" />
@@ -52,14 +52,14 @@ const OptionCard = ({ option }: { option: InvolvementOption }) => {
         return (
             <article
                 className={cn(
-                    "relative flex min-h-80 flex-col justify-between overflow-hidden rounded-3xl bg-ink-700 p-6 sm:p-8",
+                    "relative flex min-h-80 flex-col justify-between overflow-hidden rounded-3xl bg-[#1C3746] p-6 sm:p-8",
                     cardHover
                 )}
             >
-                <span className="ml-auto absolute right-10 grid size-11 place-items-center rounded-full border border-white/25 text-white/80 transition-[rotate,border-color] duration-500 ease-out group-hover:rotate-12 group-hover:border-white/50">
-                    <Icon className="size-5" />
+                <span className="ml-auto absolute top-3 right-10">
+                    <Icon className="size-16 lg:size-18 text-[#B5C5F7] opacity-10" />
                 </span>
-                <div className="mt-8 flex flex-col justify-between h-full">
+                <div className="mt-8 lg:mt-12 flex flex-col justify-between h-full">
                     <div>
                         <h3 className="text-2xl font-bold text-white">{option.name.toUpperCase()}</h3>
                         <p className="mt-2 max-sm:text-sm lg:text-lg leading-relaxed text-white/75">
