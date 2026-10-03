@@ -618,3 +618,12 @@ export const sparkGlossary: SparkGlossaryEntry[] = [
         tone: "iris",
     },
 ];
+
+export const areasOfInterest = [
+    { value: "learn", label: "Learn - Join the Academy" },
+    { value: "volunteer", label: "Volunteer" },
+    { value: "mentor", label: "Mentor" },
+    { value: "partner", label: "Partner" },
+    { value: "support", label: "Support" },
+    { value: "other", label: "Other" },
+]

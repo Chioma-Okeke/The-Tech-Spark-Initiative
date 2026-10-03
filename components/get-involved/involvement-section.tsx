@@ -19,21 +19,21 @@ const OptionCard = ({ option }: { option: InvolvementOption }) => {
         return (
             <article
                 className={cn(
-                    "relative flex min-h-80 flex-col justify-end overflow-hidden rounded-3xl",
+                    "relative flex min-h-80 h-full lg:h-108 flex-col justify-end overflow-hidden rounded-3xl",
                     cardHover
                 )}
             >
                 <Image
-                    src="/futuristic-woman.png"
+                    src="/futuristic-black-woman.png"
                     alt=""
                     fill
                     className="object-cover object-top transition-[scale] duration-700 ease-out group-hover:scale-105"
                 />
-                <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-ink-950 via-ink-950/60 to-ink-950/10" />
+                <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-ink-950/90 via-ink-950/40 to-ink-950/10" />
                 <div className="relative p-6 sm:p-8">
                     <Icon className="size-7 text-primary" />
-                    <h3 className="mt-4 text-xl font-bold text-white">{option.name}</h3>
-                    <p className="mt-2 max-w-sm text-sm leading-relaxed text-white/80">
+                    <h3 className="mt-4 text-2xl font-bold text-white">{option.name.toUpperCase()}</h3>
+                    <p className="mt-2 max-w-md max-sm:text-sm lg:text-lg leading-relaxed text-white/80">
                         {option.description}
                     </p>
                     <Link
@@ -56,14 +56,16 @@ const OptionCard = ({ option }: { option: InvolvementOption }) => {
                     cardHover
                 )}
             >
-                <span className="ml-auto grid size-11 place-items-center rounded-full border border-white/25 text-white/80 transition-[rotate,border-color] duration-500 ease-out group-hover:rotate-12 group-hover:border-white/50">
+                <span className="ml-auto absolute right-10 grid size-11 place-items-center rounded-full border border-white/25 text-white/80 transition-[rotate,border-color] duration-500 ease-out group-hover:rotate-12 group-hover:border-white/50">
                     <Icon className="size-5" />
                 </span>
-                <div>
-                    <h3 className="text-xl font-bold text-white">{option.name}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-white/75">
-                        {option.description}
-                    </p>
+                <div className="mt-8 flex flex-col justify-between h-full">
+                    <div>
+                        <h3 className="text-2xl font-bold text-white">{option.name.toUpperCase()}</h3>
+                        <p className="mt-2 max-sm:text-sm lg:text-lg leading-relaxed text-white/75">
+                            {option.description}
+                        </p>
+                    </div>
                     <Link
                         href={option.href}
                         className={cn(
@@ -82,17 +84,19 @@ const OptionCard = ({ option }: { option: InvolvementOption }) => {
     return (
         <article
             className={cn(
-                "flex flex-col rounded-3xl border border-transparent bg-ink-850 p-6 transition-colors sm:p-8 hover:border-white/10",
+                "flex flex-col h-full justify-between rounded-3xl border border-transparent bg-ink-850 px-6 py-8 pt-12 transition-colors md:pb-8.5 md:pt-16 hover:border-white/10",
                 cardHover
             )}
         >
-            <h3 className="inline-flex items-center gap-2 text-xl font-bold text-white">
-                {option.name}
-                <Icon className="size-4 text-primary" />
-            </h3>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {option.description}
-            </p>
+            <div>
+                <h3 className="inline-flex items-center gap-2 text-2xl font-bold text-white">
+                    {option.name.toUpperCase()}
+                    <Icon className="size-4 text-primary" />
+                </h3>
+                <p className="mt-3 max-sm:text-sm lg:text-lg leading-relaxed text-muted-foreground">
+                    {option.description}
+                </p>
+            </div>
             <Link
                 href={option.href}
                 className="mt-6 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-primary"

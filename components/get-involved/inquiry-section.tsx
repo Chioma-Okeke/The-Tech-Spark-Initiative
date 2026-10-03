@@ -17,25 +17,12 @@ import {
     SelectValue,
 } from "../ui/select"
 import { Textarea } from "../ui/textarea"
+import { areasOfInterest } from "@/lib/data"
 
-const areasOfInterest = [
-    { value: "learn", label: "Learn — Join the Academy" },
-    { value: "volunteer", label: "Volunteer" },
-    { value: "mentor", label: "Mentor" },
-    { value: "partner", label: "Partner" },
-    { value: "support", label: "Support" },
-    { value: "other", label: "Other" },
-]
 
-// once the card has risen in, its fields follow one row at a time
 const formRows: Variants = {
     hidden: {},
     visible: { transition: { staggerChildren: 0.08, delayChildren: 0.3 } },
-}
-
-const formRow: Variants = {
-    hidden: { opacity: 0, y: 12 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
 }
 
 const InquiriesSection = () => {
@@ -74,7 +61,7 @@ const InquiriesSection = () => {
                             viewport={{ once: true, amount: 0.3 }}
                             className="mt-8 space-y-5"
                         >
-                            <motion.div variants={formRow} className="grid gap-5 sm:grid-cols-2">
+                            <div className="grid gap-5 sm:grid-cols-2">
                                 <div className="space-y-2">
                                     <Label htmlFor="firstName">First Name</Label>
                                     <Input
@@ -109,9 +96,9 @@ const InquiriesSection = () => {
                                         required
                                     />
                                 </div>
-                            </motion.div>
+                            </div>
 
-                            <motion.div variants={formRow} className="space-y-2">
+                            <div className="space-y-2">
                                 <Label htmlFor="emailAddress">Email</Label>
                                 <Input
                                     type="email"
@@ -127,9 +114,9 @@ const InquiriesSection = () => {
                                     }
                                     required
                                 />
-                            </motion.div>
+                            </div>
 
-                            <motion.div variants={formRow} className="space-y-2">
+                            <div className="space-y-2">
                                 <Label htmlFor="areaOfInterest">Area of Interest</Label>
                                 <Select
                                     value={contactInfo.areaOfInterest}
@@ -151,9 +138,9 @@ const InquiriesSection = () => {
                                         ))}
                                     </SelectContent>
                                 </Select>
-                            </motion.div>
+                            </div>
 
-                            <motion.div variants={formRow} className="space-y-2">
+                            <div className="space-y-2">
                                 <Label htmlFor="message">Message</Label>
                                 <Textarea
                                     id="message"
@@ -168,16 +155,16 @@ const InquiriesSection = () => {
                                     }
                                     required
                                 />
-                            </motion.div>
+                            </div>
 
-                            <motion.div variants={formRow}>
+                            <div>
                                 <Button
                                     type="submit"
                                     className="h-auto w-full rounded-lg py-3 text-sm font-bold"
                                 >
                                     Send Message
                                 </Button>
-                            </motion.div>
+                            </div>
                         </motion.form>
                     </AnimatedSection>
                 </MaxContainer>
