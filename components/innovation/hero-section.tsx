@@ -1,16 +1,24 @@
 "use client"
 
-import Link from "next/link"
-import { cn } from "cn"
 import { motion } from "framer-motion"
 import { ArrowRight } from "@/icons"
 import { drawLine, ease, fadeUp, floatIn, heroCopy } from "@/lib/animation-data"
 import MaxContainer from "../shared/max-container"
 import PaddingContainer from "../shared/padding-container"
-import { buttonVariants } from "../ui/button"
+import { Button } from "../ui/button"
 import Image from "next/image"
 
 const InnovationHeroSection = () => {
+    const moveToProjectSection = () => {
+        const el = document.getElementById("projects")
+        if (!el) return
+        const top = el.getBoundingClientRect().top
+        window.scrollTo({
+            top,
+            behavior: "smooth"
+        })
+    }
+
     return (
         <section className="dark relative overflow-hidden bg-ink-900 text-foreground">
             {/* decorative diagonal lines */}
@@ -89,16 +97,13 @@ const InnovationHeroSection = () => {
                                 stacks. Learn how to apply it.
                             </motion.p>
                             <motion.div variants={fadeUp}>
-                                <Link
-                                    href="#featured-courses"
-                                    className={cn(
-                                        buttonVariants(),
-                                        "group mt-8 h-auto gap-2 rounded-xl px-7 py-4 max-lg:text-sm font-bold"
-                                    )}
+                                <Button
+                                    onClick={moveToProjectSection}
+                                    className="group mt-8 h-auto gap-2 rounded-xl px-7 py-4 max-lg:text-sm font-bold"
                                 >
                                     Explore Projects
                                     <ArrowRight className="size-4 transition-transform duration-300 ease-out group-hover:translate-x-1" />
-                                </Link>
+                                </Button>
                             </motion.div>
                         </motion.div>
                         <motion.div

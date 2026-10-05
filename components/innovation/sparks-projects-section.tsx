@@ -9,7 +9,7 @@ import ProjectCard from "./project-card"
 
 const SparksProjectsSection = () => {
     return (
-        <section className="relative overflow-hidden bg-ink-950">
+        <section id="projects" className="relative overflow-hidden bg-ink-950">
             <svg
                 aria-hidden
                 className="pointer-events-none absolute right-[8%] top-8 hidden h-24 w-24 text-aqua-400/60 lg:block"

@@ -127,6 +127,8 @@ export const navItems = [
     },
 ];
 
+export const registrationLink = "https://docs.google.com/forms/d/e/1FAIpQLSfVuB1MqI6v6cVKweJxs2-A4SlJJaG8gxJJUeLUBk4iKWAhFw/viewform?usp=header"
+
 export const journeySteps: JourneyStep[] = [
     {
         name: "Learn",

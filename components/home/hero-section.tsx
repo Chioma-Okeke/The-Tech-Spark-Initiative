@@ -6,10 +6,11 @@ import { journeySteps } from "@/lib/data"
 import { AnimatedSection } from "../shared/animated-section"
 import MaxContainer from "../shared/max-container"
 import PaddingContainer from "../shared/padding-container"
-import { Button } from "../ui/button"
+import { Button, buttonVariants } from "../ui/button"
 import ImageIllustration from "./image-illustration"
 import { drawLine, fadeUp, heroCopy, ease } from "@/lib/animation-data"
 import { heroSectionLines } from "@/lib/styling-data"
+import Link from "next/link"
 
 
 
@@ -61,15 +62,22 @@ const HeroSection = () => {
                                     variants={fadeUp}
                                     className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start"
                                 >
-                                    <Button className="h-auto w-full rounded-full px-8 py-4 max-sm:text-xs font-bold tracking-[0.15em] sm:w-auto">
+                                    <Link
+                                        href="/academy"
+                                        className={cn(
+                                            buttonVariants(),
+                                            "h-auto w-full rounded-full px-8 py-4 max-sm:text-xs font-bold tracking-[0.15em] sm:w-auto"
+                                        )}>
                                         EXPLORE PROGRAMMES
-                                    </Button>
-                                    <Button
-                                        variant="outline"
-                                        className="h-auto w-full rounded-full border-iris-500 bg-transparent px-8 py-4 max-sm:text-xs font-bold tracking-[0.15em] text-foreground hover:bg-iris-500/10 sm:w-auto"
+                                    </Link>
+                                    <Link
+                                        href="/about"
+                                        className={
+                                            cn(buttonVariants({ variant: "outline" }), "h-auto w-full rounded-full border-iris-500 bg-transparent px-8 py-4 max-sm:text-xs font-bold tracking-[0.15em] text-foreground hover:bg-iris-500/10 sm:w-auto")
+                                        }
                                     >
                                         OUR VISION
-                                    </Button>
+                                    </Link>
                                 </motion.div>
                             </motion.div>
                         </div>

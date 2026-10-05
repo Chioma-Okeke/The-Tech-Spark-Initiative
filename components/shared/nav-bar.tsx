@@ -1,7 +1,7 @@
 "use client"
 
-import { navItems } from "@/lib/data"
-import { Button } from "../ui/button"
+import { navItems, registrationLink } from "@/lib/data"
+import { buttonVariants } from "../ui/button"
 import { LogoSVG } from "./logo-svg"
 import MaxContainer from "./max-container"
 import PaddingContainer from "./padding-container"
@@ -66,9 +66,14 @@ const NavBar = () => {
                         </nav>
 
                         {/* Desktop CTA */}
-                        <Button className="hidden shrink-0 rounded-full px-6 py-3 h-auto lg:inline-flex">
+                        <Link 
+                            href={registrationLink}
+                            target="_blank"
+                            className={
+                            cn(buttonVariants(), "hidden shrink-0 rounded-full px-6 py-3 h-auto lg:inline-flex")
+                        }>
                             BECOME A SPARK TODAY!
-                        </Button>
+                        </Link>
 
                         {/* Mobile menu toggle */}
                         <button
@@ -124,9 +129,14 @@ const NavBar = () => {
                                     ))}
                                 </ol>
                                 <motion.div variants={panelItem}>
-                                    <Button className="mt-4 w-full rounded-full px-6 py-4 h-auto">
+                                    <Link
+                                        href={registrationLink}
+                                        target="_blank"
+                                        className={
+                                        cn(buttonVariants(), "mt-4 w-full rounded-full px-6 py-4 h-auto")
+                                    }>
                                         BECOME A SPARK TODAY!
-                                    </Button>
+                                    </Link>
                                 </motion.div>
                             </motion.nav>
                         )}

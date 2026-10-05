@@ -1,9 +1,15 @@
+"use client"
+
 import { AnimatedSection } from "../shared/animated-section"
 import MaxContainer from "../shared/max-container"
 import PaddingContainer from "../shared/padding-container"
-import { Button } from "../ui/button"
+import { buttonVariants } from "../ui/button"
+import { registrationLink } from "@/lib/data"
+import Link from "next/link"
+import { cn } from "cn"
 
 const BottomCTA = () => {
+
     return (
         <section className="dark bg-ink-900 py-14 text-foreground md:py-20 lg:py-28">
             <PaddingContainer>
@@ -15,9 +21,11 @@ const BottomCTA = () => {
                         <p className="mx-auto max-w-xl text-base leading-relaxed text-iris-100 sm:text-lg">
                             Join the next cohort of visionaries. Applications are open for upcoming programmes.
                         </p>
-                        <Button className="mt-2 font-medium h-auto w-full max-w-xs rounded-full px-10 py-5 shadow-[0_8px_30px_0_#FBBC0066] sm:w-auto">
+                        <Link href={registrationLink} target="_blank" className={cn(buttonVariants(),
+                            "mt-2 font-medium h-auto w-full max-w-xs rounded-full px-10 py-5 shadow-[0_8px_30px_0_#FBBC0066] sm:w-auto"
+                        )}>
                             APPLY NOW
-                        </Button>
+                        </Link>
                     </MaxContainer>
                 </AnimatedSection>
             </PaddingContainer>
