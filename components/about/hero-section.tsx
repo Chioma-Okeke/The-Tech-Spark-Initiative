@@ -90,7 +90,7 @@ const AboutHeroSection = () => {
                             className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg"
                         >
                             The Tech-Spark Visionary Initiative is a premium, faith-rooted technology
-                            initiative bridging the gap between purpose, education, and innovation —
+                            initiative bridging the gap between purpose, education, and innovation,
                             building the next generation of tech leaders.
                         </motion.p>
                         <motion.div variants={fadeUp}>

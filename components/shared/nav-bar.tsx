@@ -39,9 +39,9 @@ const NavBar = () => {
             <PaddingContainer className="py-4 max-lg:px-0">
                 <MaxContainer className="relative max-sm:px-2">
                     <div className="flex items-center justify-between gap-4">
-                        <div className="shrink-0">
+                        <Link href="/" className="shrink-0">
                             <LogoSVG />
-                        </div>
+                        </Link>
 
                         {/* Desktop nav */}
                         <nav className="hidden lg:block">

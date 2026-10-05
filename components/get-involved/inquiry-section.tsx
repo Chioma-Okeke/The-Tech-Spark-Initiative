@@ -2,7 +2,6 @@
 
 import { FormEvent, useState } from "react"
 import { motion, type Variants } from "framer-motion"
-import { ease } from "@/lib/animation-data"
 import { AnimatedSection } from "../shared/animated-section"
 import MaxContainer from "../shared/max-container"
 import PaddingContainer from "../shared/padding-container"
@@ -68,7 +67,7 @@ const InquiriesSection = () => {
                                         type="text"
                                         id="firstName"
                                         placeholder="Jane"
-                                        className="h-10 bg-paper"
+                                        className="h-11 bg-paper"
                                         value={contactInfo.firstName}
                                         onChange={(event) =>
                                             setContactInfo((prev) => ({
@@ -85,7 +84,7 @@ const InquiriesSection = () => {
                                         type="text"
                                         id="lastName"
                                         placeholder="Doe"
-                                        className="h-10 bg-paper"
+                                        className="h-11 bg-paper"
                                         value={contactInfo.lastName}
                                         onChange={(event) =>
                                             setContactInfo((prev) => ({
@@ -104,7 +103,7 @@ const InquiriesSection = () => {
                                     type="email"
                                     id="emailAddress"
                                     placeholder="jane@example.com"
-                                    className="h-10 bg-paper"
+                                    className="h-11 bg-paper"
                                     value={contactInfo.emailAddress}
                                     onChange={(event) =>
                                         setContactInfo((prev) => ({
@@ -127,7 +126,7 @@ const InquiriesSection = () => {
                                         }))
                                     }
                                 >
-                                    <SelectTrigger id="areaOfInterest" className="h-10 w-full bg-paper">
+                                    <SelectTrigger id="areaOfInterest" className="h-11 w-full bg-paper">
                                         <SelectValue placeholder="Select an option..." />
                                     </SelectTrigger>
                                     <SelectContent>

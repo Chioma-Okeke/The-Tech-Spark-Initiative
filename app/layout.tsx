@@ -17,7 +17,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
 
 const siteName = "Tech-Spark Visionary Initiative"
 const description =
-  "The Tech-Spark Visionary Initiative (TVI) is a faith-rooted technology initiative bridging purpose, education, and innovation — building the next generation of tech leaders through the TVI Academy, the Innovation Lab, scholarships and community outreach."
+  "The Tech-Spark Visionary Initiative (TVI) is a faith-rooted technology initiative bridging purpose, education, and innovation, building the next generation of tech leaders through the TVI Academy, the Innovation Lab, scholarships and community outreach."
 const shortDescription =
   "Technology with Purpose. Innovation with Impact. Learn, build and lead with the TVI Academy, Innovation Lab and scholarships."
 
