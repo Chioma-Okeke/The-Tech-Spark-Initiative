@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tech-Spark Visionary Initiative (TVI)
 
-## Getting Started
+**Technology with Purpose. Innovation with Impact.**
 
-First, run the development server:
+The Tech-Spark Visionary Initiative is a faith-rooted technology initiative that combines practical education, innovation, and community outreach to equip the next generation of tech leaders. TVI helps learners develop technical skills, build character, and create solutions that serve their communities, with a focus on Africa's technology ecosystem.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This repository contains TVI's public website. Visitors can explore the Academy, discover learner projects, understand scholarship pathways, and find ways to learn, volunteer, mentor, partner, or support the initiative.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Product overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **TVI Academy:** Introduces the learning methodology, featured courses, and evaluation approach, balancing academic performance with character and participation.
+- **Innovation Lab:** Showcases practical projects built by learners, including applications of AI to learning, careers, and research.
+- **Scholarships:** Explains the published support tiers, from a 20% baseline to 100%, along with service commitments and six impact categories.
+- **Community involvement:** Presents opportunities for learners, volunteers, mentors, partners, and supporters.
+- **Purpose and values:** Shares TVI's story, mission, vision, and core values: Kingdom, Innovation, Excellence, Impact, and Inclusivity.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Learners are called **Sparks**, and cohorts are called **Gens**.
 
-## Learn More
+## Pages
 
-To learn more about Next.js, take a look at the following resources:
+| Route | Page | Content |
+| --- | --- | --- |
+| `/` | Home | Introduction, learning journey, core values, Innovation Lab, and outreach |
+| `/about` | About | TVI's story, mission, and vision |
+| `/academy` | Academy | Learner terminology, methodology, evaluation, and featured courses |
+| `/innovation` | Innovation | Innovation Lab introduction and learner project showcase |
+| `/get-involved` | Get Involved | Participation pathways and general inquiry form |
+| `/scholarships` | Scholarships | Support tiers, baseline projects, commitments, and impact categories |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The website includes responsive navigation, animated sections, a back-to-top control, and site metadata for search and social sharing.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Technology
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Area | Stack |
+| --- | --- |
+| Framework | Next.js 16.3.4 with the App Router |
+| UI | React 19.2.8 and TypeScript 5 |
+| Styling | Tailwind CSS 4 and CSS custom properties |
+| Components | shadcn/ui with Base UI primitives |
+| Animation | Framer Motion |
+| Icons | Lucide React and custom SVG icons |
+| Typography | Inter and Montserrat through `next/font/google` |
+| Linting | ESLint 9 with Next.js configuration |

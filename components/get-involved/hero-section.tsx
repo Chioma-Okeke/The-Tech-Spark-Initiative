@@ -1,68 +1,10 @@
 "use client"
 
-import { motion, type Variants } from "framer-motion"
+import { motion } from "framer-motion"
 import { drawLine, ease, fadeUp, floatIn, heroCopy } from "@/lib/animation-data"
 import MaxContainer from "../shared/max-container"
 import PaddingContainer from "../shared/padding-container"
 import Image from "next/image"
-
-const teamFigures = [
-    { x: 70, tone: "text-iris-400" },
-    { x: 160, tone: "text-grey-300" },
-    { x: 250, tone: "text-iris-500" },
-] as const
-
-// the team rises into place one by one, then the table settles beneath them
-const illustration: Variants = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.15, delayChildren: 0.6 } },
-}
-
-const riseIn: Variants = {
-    hidden: { opacity: 0, y: 16 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease } },
-}
-
-const TeamIllustration = () => {
-    return (
-        <motion.svg
-            aria-hidden
-            viewBox="0 0 380 210"
-            variants={illustration}
-            initial="hidden"
-            animate="visible"
-            className="mx-auto h-auto w-full max-w-md"
-        >
-            {teamFigures.map((figure) => (
-                <motion.g key={figure.x} variants={riseIn}>
-                    <circle cx={figure.x + 32} cy={55} r="20" className="fill-ink-950" />
-                    <rect
-                        x={figure.x}
-                        y={80}
-                        width="64"
-                        height="70"
-                        rx="24"
-                        className={figure.tone}
-                        fill="currentColor"
-                    />
-                    <rect
-                        x={figure.x + 8}
-                        y={118}
-                        width="48"
-                        height="34"
-                        rx="4"
-                        className="fill-ink-950"
-                    />
-                </motion.g>
-            ))}
-            <motion.g variants={riseIn}>
-                <rect x="20" y="168" width="340" height="14" rx="7" className="fill-paper" />
-                <rect x="130" y="192" width="120" height="5" rx="2.5" className="fill-paper/70" />
-                <rect x="165" y="205" width="50" height="5" rx="2.5" className="fill-paper/50" />
-            </motion.g>
-        </motion.svg>
-    )
-}
 
 const GetInvolvedHeroSection = () => {
     return (
